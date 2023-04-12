@@ -1,0 +1,11 @@
+[book]
+authors = ["Yuki Tanaka"]
+language = "ja"
+multilingual = false
+src = "src"
+title = "Rails Workbook - ゼロから始めるRuby on Rails入門"
+description = "会員制メディア&CMS開発による実践的アプローチ"
+
+[output.html]
+git-repository-url = "https://github.com/matakitanakajp09/gs-rails-workbook"
+git-repository-icon = "fa-github"
