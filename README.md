@@ -1,15 +1,10 @@
 # Gs Rails Workbook 💎
 
-このリポジトリは、G's ACADEMY EXPANSION講座「Rails Workbook - ゼロから始めるRuby on Rails入門 会員制メディア&CMS開発による実践的アプローチ」の講座資料です。
+このリポジトリは、【G's EXPANSION】 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！の講座資料です。
 
 こちらのURLをご覧ください。
 
 **https://matakitanakajp09.github.io/gs-rails-workbook/**
-
-
-## Course Format and Target Audience
-
-
 
 ## Building
 

@@ -1,41 +1,49 @@
 # Summary
 
-[Welcome to Rails Workbook](welcome.md)
+[Welcome to 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！](welcome.md)
 
-- [本サイトについて](running-the-course.md)
+- [本講座について](running-the-course.md)
   - [講座](running-the-course/course-structure.md)
-  - [インストール](running-the-course/course-building.md)
+  - [事前準備](running-the-course/course-building.md)
   - [Demo Day](running-the-course/demo-day.md)
 
 # Day 0: Ruby基礎
 
-- [Welcome](welcome-day-0.md)
-  - [What is Ruby?](welcome-day-0/what-is-ruby.md)
-- [プログラム・文・式](welcome-day-0/program.md)
-- [変数と定数](welcome-day-0/variables.md)
-- [リテラル](welcome-day-0/literal.md)
-- [演算子式](welcome-day-0/operator.md)
-- [制御構文](welcome-day-0/control.md)
-- [メソッド呼び出し(super・ブロック付き・yield)](welcome-day-0/call.md)
-- [クラス/メソッドの定義](welcome-day-0/def.md)
+- [Rubyとは](day-0/what-is-ruby.md)
+- [Exercise](day-0/exercise/welcome.md)
+  - [Exercise - じゃんけんプログラム](day-0/exercise/exercise-janken.md)
+  - [Exercise - 自動販売機プログラム](day-0/exercise/exercise-vending-machine.md)
+- [Appendix](day-0/appendix/welcome.md)
+  - [プログラム・文・式](day-0/appendix/program.md)
+  - [変数と定数](day-0/appendix/variables.md)
+  - [リテラル](day-0/appendix/literal.md)
+  - [演算子式](day-0/appendix/operator.md)
+  - [制御構文](day-0/appendix/control.md)
+  - [メソッド呼び出し(super・ブロック付き・yield)](day-0/appendix/call.md)
+  - [クラス/メソッドの定義](day-0/appendix/def.md)
+  - [字句構造](day-0/appendix/flexical.md)
+
 
 # Day 0: Ruby on Rails基礎
-- [What is Ruby on Rails?](welcome-day-0/what-is-ruby-on-rails.md)
-- [Ruby on Railsの環境構築](welcome-day-0/how-to-setup.md)
-- [Hello World!](welcome-day-0/hello-world.md)
-- [Ruby on Railsを用いたWeb開発の全体像](welcome-day-0/web-development-overview.md)
-  - [Webサーバとアプリケーションサーバの理解](welcome-day-0/web-and-application-server.md)
-  - [MVC+MR(ミドルウェア、ルーティング)基礎](welcome-day-0/mvc-architecture-and-routing.md)
-  - [フォルダ/ファイルの関係性](welcome-day-0/folders-and-files.md)
-  - [データベース管理とマイグレーション](welcome-day-0/databse-management-and-migration.md)
+- [Ruby on Railsとは?](day-0/what-is-ruby-on-rails.md)
+- [Ruby on Railsの環境構築](day-0/how-to-setup.md)
+- [Ruby on Railsを用いたWeb開発の全体像](day-0/web-development-overview.md)
+  <!-- - [Webサーバとアプリケーションサーバの理解](day-0/web-and-application-server.md)
+  - [MVC+MR(ミドルウェア、ルーティング)基礎](day-0/mvc-architecture-and-routing.md)
+  - [フォルダ/ファイルの関係性](day-0/folders-and-files.md)
+  - [データベース管理とマイグレーション](day-0/databse-management-and-migration.md) -->
 
 # Day0: 事前学習
 
+- [本講義プロジェクトMyCMSのER図](day-0/goal.md)
+- [記事管理機能⓪：サンプル](day-0/cms-sample.md)
+
 # Day0 課題(Day1に向けた課題):
 
-- [本講義ゴールプロジェクトMyCMSのER図とカラム表](welcome-day-0/goal.md)
+- [記事管理機能①：タグ管理](day-0/cms-tag.md)
 
 
+<!-- 
 ----
 
 # Day1 講義:
@@ -61,4 +69,4 @@
 
 # Appendix
 
-- [Appendix](appendix/welcome.md)
+- [Appendix](appendix/welcome.md) -->
