@@ -243,6 +243,18 @@ bin/rails db:migrate
 == 20230529113755 CreateActionTextTables: migrated (0.0111s) ==================
 ```
 
+### 静的ファイル関連設定
+
+esbuildとsassをインストールします
+
+```bash
+bin/rails javascript:install:esbuild
+```
+
+```bash
+bin/rails css:install:sass
+```
+
 ### Rails(puma)を起動する
 
 Railsを起動するには、以下のコマンドを実行します。
