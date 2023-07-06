@@ -2,8 +2,8 @@
 
 いくつか題材を元に、Rubyの基礎を学びたいと思います。
 
-- [じゃんけんプログラム](day-0/exercise/exercise-janken.md)
-- [自動販売機プログラム](day-0/exercise/exercise-vending-machine.md)
+- [じゃんけんプログラム](./exercise-janken.md)
+- [自動販売機プログラム](./exercise-vending-machine.md)
 
 各ページで書き方の解説をしていますが、別途、[Appendix](../appendix/welcome.md)にもまとめていますので、そちらも参照してください。
 

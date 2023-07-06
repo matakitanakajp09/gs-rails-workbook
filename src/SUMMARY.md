@@ -63,10 +63,14 @@
 # Day3 講義:
 
 
-# Day3 Demo Day:
+# Day3 Demo Day: -->
 
 ----
 
 # Appendix
 
-- [Appendix](appendix/welcome.md) -->
+- [Appendix](appendix/welcome.md)
+  - [MVCとルーティング](appendix/mvc-r.md)
+  - [データベース構造と設計](appendix/database-design.md)
+  <!-- - [マイグレーション](appendix/database-migration.md) -->
+  <!-- - [web開発の全体像](appendix/web-development-overview.md) -->
