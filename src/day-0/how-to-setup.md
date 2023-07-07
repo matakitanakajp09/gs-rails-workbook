@@ -245,14 +245,10 @@ bin/rails db:migrate
 
 ### 静的ファイル関連設定
 
-esbuildとsassをインストールします
+esbuildをインストールします
 
 ```bash
 bin/rails javascript:install:esbuild
-```
-
-```bash
-bin/rails css:install:sass
 ```
 
 ### Rails(puma)を起動する
