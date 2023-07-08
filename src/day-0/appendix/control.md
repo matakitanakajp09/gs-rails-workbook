@@ -15,10 +15,10 @@ end
 Rubyでは、`if`、`elsif`、`else`を使う
 
 ```ruby
-if sum >= 100
-  print "合計が100を超えている"
-elsif sum >= 200
+if sum >= 200
   print "合計が200を超えている"
+elsif sum >= 100
+  print "合計が100を超えている"
 else
   print "合計が100を超えていない"
 end
@@ -34,9 +34,9 @@ print "合計が100を超えている" if sum >= 100
 
 ```ruby
 unless sum >= 100
-  print "合計が100を超えている"
-else
   print "合計が100を超えていない"
+else
+  print "合計が100を超えている"
 end
 ```
 

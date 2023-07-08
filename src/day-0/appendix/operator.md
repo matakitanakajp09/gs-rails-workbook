@@ -58,7 +58,7 @@ deploy or die
 ```ruby
 1 || 2 # => 1
 nil || false # => false
-false || nil # => false
+false || nil # => nil
 ```
 
 ## not
