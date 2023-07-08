@@ -1,6 +1,5 @@
 # MVCとルーティング
 
-
 MVCとルーティングの関係図
 
 ![img](./image/MVC-R.jpg)

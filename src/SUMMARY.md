@@ -41,16 +41,19 @@
 # Day0 課題(Day1に向けた課題):
 
 - [記事管理機能①：タグ管理](day-0/cms-tag.md)
-
+  - [一覧画面](day-0/cms-tag-index.md)
+  - [詳細画面](day-0/cms-tag-show.md)
+  - [編集画面](day-0/cms-tag-edit.md)
+  - [作成画面](day-0/cms-tag-new.md)
 
 <!-- 
 ----
 
 # Day1 講義:
 
-# Day1 課題(Day2に向けた課題):
+# Day1 課題(Day2に向けた課題): -->
 
-----
+<!-- ----
 
 # Day2 講義:
 
@@ -71,6 +74,10 @@
 
 - [Appendix](appendix/welcome.md)
   - [MVCとルーティング](appendix/mvc-r.md)
+  - [ルーティングについて](appendix/routing.md)
   - [データベース構造と設計](appendix/database-design.md)
+  - [ActiveRecordについて](appendix/active-record.md)
+  - [Controllerにまつわる処理ついて](appendix/controller.md)
+  - [Railsでよく使われるコマンド](appendix/rails-dev-command.md)
   <!-- - [マイグレーション](appendix/database-migration.md) -->
   <!-- - [web開発の全体像](appendix/web-development-overview.md) -->
