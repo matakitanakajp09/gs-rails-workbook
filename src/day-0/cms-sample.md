@@ -146,7 +146,7 @@ def show
   # `params[:id]`は`1`という値になります。
   # そのため、`Author.find(params[:id])`というコードは、
   # `authors`テーブルから`id`が`1`のレコードを取得するという意味になります。
-  # つまり、Article.find("1")となります。
+  # つまり、Author.find("1")となります。
 end
 ```
 
