@@ -51,9 +51,9 @@
 
 # Day1 講義:
 
+- [Day1 講義用ページ](day-1/lecture.md)
+  - [Day1 ハンズオン](day-1/handson.md)
 
-
-# Day1 課題(Day2に向けた課題):
 
 <!-- ----
 
@@ -78,8 +78,8 @@
   - [MVCとルーティング](appendix/mvc-r.md)
   - [ルーティングについて](appendix/routing.md)
   - [データベース構造と設計](appendix/database-design.md)
+  - [マイグレーション](appendix/database-migration.md)
   - [ActiveRecordについて](appendix/active-record.md)
   - [Controllerにまつわる処理ついて](appendix/controller.md)
   - [Railsでよく使われるコマンド](appendix/rails-dev-command.md)
-  <!-- - [マイグレーション](appendix/database-migration.md) -->
   <!-- - [web開発の全体像](appendix/web-development-overview.md) -->

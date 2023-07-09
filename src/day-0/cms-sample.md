@@ -22,7 +22,7 @@
 | Route   | `config/routes/admin/authors.rb` |
 | Controller   | `app/controllers/admin/authors_controller.rb#index` |
 | View   | `app/views/admin/authors/index.html.erb` |
-| Model  | `app/models/article.rb` |
+| Model  | `app/models/author.rb` |
 | Url  | `http://localhost:3000/admin/authors` |
 
 ![img](./rails/cms-sample1.png)
@@ -34,7 +34,7 @@
 | Route   | `config/routes/admin/authors.rb` |
 | Controller   | `app/controllers/admin/authors_controller.rb#show` |
 | View   | `app/views/admin/authors/show.html.erb` |
-| Model  | `app/models/article.rb` |
+| Model  | `app/models/author.rb` |
 | Url  | `http://localhost:3000/admin/authors/:id` |
 
 ![img](./rails/cms-sample2.png)
@@ -47,7 +47,7 @@
 | Controller(画面表示用)   | `app/controllers/admin/authors_controller.rb#new` |
 | Controller(データ作成用)   | `app/controllers/admin/authors_controller.rb#create` |
 | View   | `app/views/admin/authors/new.html.erb` |
-| Model  | `app/models/article.rb` |
+| Model  | `app/models/author.rb` |
 | Url  | `http://localhost:3000/admin/authors/new` |
 
 ![img](./rails/cms-sample3.png)
@@ -60,7 +60,7 @@
 | Controller(画面表示用)   | `app/controllers/admin/authors_controller.rb#edit` |
 | Controller(データ更新用)   | `app/controllers/admin/authors_controller.rb#update` |
 | View   | `app/views/admin/authors/edit.html.erb` |
-| Model  | `app/models/article.rb` |
+| Model  | `app/models/author.rb` |
 | Url  | `http://localhost:3000/admin/authors/:id/edit` |
 
 ![img](./rails/cms-sample4.png)
