@@ -158,6 +158,38 @@ Loading development environment (Rails 7.0.3)
 
 上記の結果から、`id: "a764bb18-6a57-49e6-8d4e-58a2d75b0210", name: "Ruby"`のTagデータが作成されたことがわかります。
 
+## 一覧画面用のテーブルを表示する
+
+[code]
+
+Filename: app/views/admin/tags/index.html.erb
+
+```erb
+<div class="l-container">
+  <%= render partial: "layouts/admin/article_menu" %>
+  <div class="l-main-view">
+    <div class="sw-main-header">
+      <div class="sw-main-header-title">
+        <%= t ".title" %>
+      </div>
+      <div class="sw-main-header-buttons">
+        <div class="sw-main-header-button">
+          <%= link_to new_admin_tag_path, class: "btn btn-primary" do %>
+            <%= t "buttons.create" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="sw-main-body">
+      <ul class="breadcrumb p-3">
+        <%= render partial: "admin/tags/breadcrumb/index" %>
+      </ul>
+      <%= render partial: "admin/tags/index_table" %>
+    </div>
+  </div>
+</div>
+```
+
 ## 一覧画面の確認
 
 [output]
