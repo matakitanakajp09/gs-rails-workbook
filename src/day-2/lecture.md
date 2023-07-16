@@ -28,6 +28,10 @@
 
 ## ハンズオン
 
+本日分は、以下のブランチに上げています。
+
+[https://github.com/matakitanakajp09/gs-expansion-rails-sample/tree/lesson-day-2](https://github.com/matakitanakajp09/gs-expansion-rails-sample/tree/lesson-day-2)
+
 ### 認証機能の実装
 
 - [認証機能: 新規登録](./handson-auth-registration.md)
