@@ -53,22 +53,23 @@
 
 - [Day1 講義用ページ](day-1/lecture.md)
   - [Day1 ハンズオン](day-1/handson.md)
-
-
-<!-- ----
+- [Day2に向けた課題](day-1/theme.md)
 
 # Day2 講義:
 
 
-
-# Day2 課題(Day3に向けた課題):
+- [Day1 QA](day-2/day-1-qa.md)
+- [Day2 講義用ページ](day-2/lecture.md)
+  - [Day2 ハンズオン](day-2/handson.md)
+    - [認証機能: 新規登録](day-2/handson-auth-registration.md)
+    - [認証機能: ログイン](day-2/handson-auth-session.md)
+    - [決済機能](day-2/handson-payment.md)
+- [Day3に向けた課題](day-2/theme.md)
 
 ----
 
 # Day3 講義:
 
-
-# Day3 Demo Day: -->
 
 ----
 
