@@ -64,5 +64,11 @@ git switch -c lesson-day-3
 
 ## 短縮URL機能、短縮URLトラッキング機能の実装
 
+### 概要図
+
+![img](./images/short_url_6.jpg)
+
+### 各ハンズオン
+
 - [短縮URL機能](./short-url.md)
 - [短縮URLトラッキング機能](./short-url-tracking.md)
