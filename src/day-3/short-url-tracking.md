@@ -82,6 +82,8 @@ Ctrl + CでRedisサーバーを停止します。
 
 ## Redis用の秘匿情報を設定
 
+ターミナルを開いて、以下のコマンドを実行します。
+
 ```bash
 EDITOR=vim bin/rails credentials:edit -e development
 ```
