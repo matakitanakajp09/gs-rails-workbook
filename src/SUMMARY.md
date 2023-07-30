@@ -70,6 +70,9 @@
 
 # Day3 講義:
 
+- [Day3用ページ](day-3/welcome.md)
+  - [Day3: 短縮URL管理画面](day-3/short-url.md)
+  - [Day3: 短縮URLトラッキング機能](day-3/short-url-tracking.md)
 
 ----
 
