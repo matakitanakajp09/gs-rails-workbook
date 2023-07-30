@@ -15,7 +15,7 @@ bin/rails g migration CreateShortUrls
 ```ruby
 # frozen_string_literal: true
 
-class CreateShortUrl < ActiveRecord::Migration[7.0]
+class CreateShortUrls < ActiveRecord::Migration[7.0]
   def change
     create_table :short_urls, id: :uuid do |t|
       t.references :admin, foreign_key: true, deferrable: :deferred, type: :uuid, comment: "Adminテーブルの外部キー"

@@ -273,12 +273,33 @@ client.fetch
 ターミナルで、以下のコマンドを実行します。
 
 ```bash
+bin/rails g migration CreateTrackingType
 bin/rails g migration CreateShortUrlTrackings
 ```
 
 以下のように編集します。
 
-Filename: `db/migrate/..._short_url_tracking.rb`
+1. Filename: `db/migrate/..._create_tracking_type.rb`
+
+```ruby
+# frozen_string_literal: true
+
+class CreateTrackingType < ActiveRecord::Migration[7.0]
+  def up
+    create_enum :tracking_type, %w[imp click]
+  end
+
+  def down
+    # While there is a `create_enum` method, there is no way to drop it. You can
+    # how ever, use raw SQL to drop the enum type.
+    execute <<-SQL
+      DROP TYPE tracking_type;
+    SQL
+  end
+end
+```
+
+2. Filename: `db/migrate/..._short_url_tracking.rb`
 
 ```ruby
 # frozen_string_literal: true
