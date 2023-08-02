@@ -1,0 +1,769 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day3: 短縮URL管理画面 - 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="会員制メディア&amp;CMS開発による実践的アプローチ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../welcome.html">Welcome to 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</a></li><li class="chapter-item expanded "><a href="../running-the-course.html"><strong aria-hidden="true">1.</strong> 本講座について</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../running-the-course/course-structure.html"><strong aria-hidden="true">1.1.</strong> 講座</a></li><li class="chapter-item expanded "><a href="../running-the-course/course-building.html"><strong aria-hidden="true">1.2.</strong> 事前準備</a></li><li class="chapter-item expanded "><a href="../running-the-course/demo-day.html"><strong aria-hidden="true">1.3.</strong> Demo Day</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day 0: Ruby基礎</li><li class="chapter-item expanded "><a href="../day-0/what-is-ruby.html"><strong aria-hidden="true">2.</strong> Rubyとは</a></li><li class="chapter-item expanded "><a href="../day-0/exercise/welcome.html"><strong aria-hidden="true">3.</strong> Exercise</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/exercise/exercise-janken.html"><strong aria-hidden="true">3.1.</strong> Exercise - じゃんけんプログラム</a></li><li class="chapter-item expanded "><a href="../day-0/exercise/exercise-vending-machine.html"><strong aria-hidden="true">3.2.</strong> Exercise - 自動販売機プログラム</a></li></ol></li><li class="chapter-item expanded "><a href="../day-0/appendix/welcome.html"><strong aria-hidden="true">4.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/appendix/program.html"><strong aria-hidden="true">4.1.</strong> プログラム・文・式</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/variables.html"><strong aria-hidden="true">4.2.</strong> 変数と定数</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/literal.html"><strong aria-hidden="true">4.3.</strong> リテラル</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/operator.html"><strong aria-hidden="true">4.4.</strong> 演算子式</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/control.html"><strong aria-hidden="true">4.5.</strong> 制御構文</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/call.html"><strong aria-hidden="true">4.6.</strong> メソッド呼び出し(super・ブロック付き・yield)</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/def.html"><strong aria-hidden="true">4.7.</strong> クラス/メソッドの定義</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/flexical.html"><strong aria-hidden="true">4.8.</strong> 字句構造</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day 0: Ruby on Rails基礎</li><li class="chapter-item expanded "><a href="../day-0/what-is-ruby-on-rails.html"><strong aria-hidden="true">5.</strong> Ruby on Railsとは?</a></li><li class="chapter-item expanded "><a href="../day-0/how-to-setup.html"><strong aria-hidden="true">6.</strong> Ruby on Railsの環境構築</a></li><li class="chapter-item expanded "><a href="../day-0/web-development-overview.html"><strong aria-hidden="true">7.</strong> Ruby on Railsを用いたWeb開発の全体像</a></li><li class="chapter-item expanded affix "><li class="part-title">Day0: 事前学習</li><li class="chapter-item expanded "><a href="../day-0/goal.html"><strong aria-hidden="true">8.</strong> 本講義プロジェクトMyCMSのER図</a></li><li class="chapter-item expanded "><a href="../day-0/cms-sample.html"><strong aria-hidden="true">9.</strong> 記事管理機能⓪：サンプル</a></li><li class="chapter-item expanded affix "><li class="part-title">Day0 課題(Day1に向けた課題):</li><li class="chapter-item expanded "><a href="../day-0/cms-tag.html"><strong aria-hidden="true">10.</strong> 記事管理機能①：タグ管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/cms-tag-index.html"><strong aria-hidden="true">10.1.</strong> 一覧画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-show.html"><strong aria-hidden="true">10.2.</strong> 詳細画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-edit.html"><strong aria-hidden="true">10.3.</strong> 編集画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-new.html"><strong aria-hidden="true">10.4.</strong> 作成画面</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day1 講義:</li><li class="chapter-item expanded "><a href="../day-1/lecture.html"><strong aria-hidden="true">11.</strong> Day1 講義用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-1/handson.html"><strong aria-hidden="true">11.1.</strong> Day1 ハンズオン</a></li></ol></li><li class="chapter-item expanded "><a href="../day-1/theme.html"><strong aria-hidden="true">12.</strong> Day2に向けた課題</a></li><li class="chapter-item expanded affix "><li class="part-title">Day2 講義:</li><li class="chapter-item expanded "><a href="../day-2/day-1-qa.html"><strong aria-hidden="true">13.</strong> Day1 QA</a></li><li class="chapter-item expanded "><a href="../day-2/lecture.html"><strong aria-hidden="true">14.</strong> Day2 講義用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-2/handson.html"><strong aria-hidden="true">14.1.</strong> Day2 ハンズオン</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-2/handson-auth-registration.html"><strong aria-hidden="true">14.1.1.</strong> 認証機能: 新規登録</a></li><li class="chapter-item expanded "><a href="../day-2/handson-auth-session.html"><strong aria-hidden="true">14.1.2.</strong> 認証機能: ログイン</a></li><li class="chapter-item expanded "><a href="../day-2/handson-payment.html"><strong aria-hidden="true">14.1.3.</strong> 決済機能</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../day-2/theme.html"><strong aria-hidden="true">15.</strong> Day3に向けた課題</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Day3 講義:</li><li class="chapter-item expanded "><a href="../day-3/welcome.html"><strong aria-hidden="true">16.</strong> Day3用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-3/short-url.html" class="active"><strong aria-hidden="true">16.1.</strong> Day3: 短縮URL管理画面</a></li><li class="chapter-item expanded "><a href="../day-3/short-url-tracking.html"><strong aria-hidden="true">16.2.</strong> Day3: 短縮URLトラッキング機能</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../appendix/welcome.html"><strong aria-hidden="true">17.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../appendix/mvc-r.html"><strong aria-hidden="true">17.1.</strong> MVCとルーティング</a></li><li class="chapter-item expanded "><a href="../appendix/routing.html"><strong aria-hidden="true">17.2.</strong> ルーティングについて</a></li><li class="chapter-item expanded "><a href="../appendix/database-design.html"><strong aria-hidden="true">17.3.</strong> データベース構造と設計</a></li><li class="chapter-item expanded "><a href="../appendix/database-migration.html"><strong aria-hidden="true">17.4.</strong> マイグレーション</a></li><li class="chapter-item expanded "><a href="../appendix/active-record.html"><strong aria-hidden="true">17.5.</strong> ActiveRecordについて</a></li><li class="chapter-item expanded "><a href="../appendix/controller.html"><strong aria-hidden="true">17.6.</strong> Controllerにまつわる処理ついて</a></li><li class="chapter-item expanded "><a href="../appendix/rails-dev-command.html"><strong aria-hidden="true">17.7.</strong> Railsでよく使われるコマンド</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day3-短縮url管理画面"><a class="header" href="#day3-短縮url管理画面">Day3: 短縮URL管理画面</a></h1>
+<h2 id="マイグレーション"><a class="header" href="#マイグレーション">マイグレーション</a></h2>
+<p>今回、短縮URL <code>short_url</code> というモデル名で実装していきます。</p>
+<p>マイグレーションファイルを作成します。</p>
+<pre><code class="language-bash">bin/rails g migration CreateShortUrls
+</code></pre>
+<p>マイグレーションファイルを以下のように編集します。</p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class CreateShortUrls &lt; ActiveRecord::Migration[7.0]
+  def change
+    create_table :short_urls, id: :uuid do |t|
+      t.references :admin, foreign_key: true, deferrable: :deferred, type: :uuid, comment: &quot;Adminテーブルの外部キー&quot;
+      t.string :custom_key, null: false, comment: &quot;カスタムキー&quot;
+      t.string :label_name, null: false, comment: &quot;URLラベルネーム&quot;
+      t.text :original_url, null: false, comment: &quot;短縮元URL&quot;
+      t.string :utm_source, null: false, comment: &quot;GA用参照元&quot;
+      t.string :utm_medium, null: false, comment: &quot;GA用メディア&quot;
+      t.string :utm_campaign, null: false, comment: &quot;GA用キャンペーン名&quot;
+      t.timestamps
+    end
+  end
+end
+</code></pre>
+<p>※データ取得でGoogle Analyticsを使用する前提で<code>utm_</code>の接頭辞が付くカラムを準備しています。</p>
+<div class="table-wrapper"><table><thead><tr><th>カラム名</th><th>説明</th></tr></thead><tbody>
+<tr><td>admin_id</td><td>Adminテーブルの外部キー</td></tr>
+<tr><td>custom_key</td><td>リダイレクト時に使用するキー</td></tr>
+<tr><td>label_name</td><td>管理画面で使用するラベル名</td></tr>
+<tr><td>original_url</td><td>短縮元リンク</td></tr>
+<tr><td>utm_source</td><td>GA用参照元</td></tr>
+<tr><td>utm_medium</td><td>GA用メディア</td></tr>
+<tr><td>utm_campaign</td><td>GA用キャンペーン名</td></tr>
+</tbody></table>
+</div>
+<p>マイグレーションを実行します。</p>
+<pre><code class="language-bash">bin/rails db:migrate
+</code></pre>
+<h2 id="モデル"><a class="header" href="#モデル">モデル</a></h2>
+<p>モデルを作成します。</p>
+<pre><code class="language-bash">touch app/models/short_url.rb
+</code></pre>
+<p>以下のように編集します。</p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class ShortUrl &lt; ApplicationRecord
+  belongs_to :admin
+
+  validates :label_name, length: { maximum: 255, too_long: &quot;最大%&lt;count&gt;s文字まで使えます&quot; }, presence: true
+  validates :original_url, presence: true
+  validates :utm_source, presence: true, length: { maximum: 255, too_long: &quot;最大%&lt;count&gt;s文字まで使えます&quot; }, presence: true
+  validates :utm_medium, presence: true, length: { maximum: 255, too_long: &quot;最大%&lt;count&gt;s文字まで使えます&quot; }, presence: true
+  validates :utm_campaign, presence: true, length: { maximum: 255, too_long: &quot;最大%&lt;count&gt;s文字まで使えます&quot; }, presence: true
+
+  before_create :fill_custom_key
+
+  def fill_custom_key
+    self.custom_key = loop do
+      uuid = SecureRandom.alphanumeric(10) # JWlXD6cCxM
+      break uuid unless self.class.exists?(custom_key: uuid)
+    end
+  end
+
+  def short_url
+    Rails.application.routes.url_helpers.short_url_url(
+      id: custom_key,
+      host: Rails.application.routes.default_url_options[:host],
+      protocol: Rails.application.routes.default_url_options[:protocol]
+    )
+  end
+
+  def parameter_url
+    query = {
+      utm_source: self&amp;.utm_source,
+      utm_medium: self&amp;.utm_medium,
+      utm_campaign: self&amp;.utm_campaign
+    }
+    uri = URI.parse(self&amp;.original_url)
+    uri.query = query.to_param
+    uri.to_s
+  end
+end
+</code></pre>
+<h2 id="ルーティング"><a class="header" href="#ルーティング">ルーティング</a></h2>
+<p>続いて管理画面用のルーティングを設定していきます。</p>
+<pre><code class="language-bash">touch config/routes/admin/short_urls.rb
+</code></pre>
+<p>以下のように編集します。</p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+Rails.application.routes.draw do
+  namespace :admin do
+    resources :short_urls
+  end
+end
+</code></pre>
+<h2 id="コントローラー"><a class="header" href="#コントローラー">コントローラー</a></h2>
+<p>続いてコントローラーを作成します。</p>
+<pre><code class="language-bash">touch app/controllers/admin/short_urls_controller.rb
+</code></pre>
+<p>以下のように編集します。</p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class Admin::ShortUrlsController &lt; Admin::ApplicationController
+  def index
+    @short_urls = ShortUrl.all
+  end
+
+  def show
+    @short_url = ShortUrl.find(params[:id])
+  end
+
+  def new
+    @short_url = ShortUrl.new
+  end
+
+  def create
+    @short_url = ShortUrl.new(create_params)
+    if @short_url.save
+      flash.now.notice = t(&quot;admin.create.success&quot;)
+      redirect_to admin_short_urls_path
+    else
+      flash.now.alert = t(&quot;admin.create.failed&quot;)
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @short_url = ShortUrl.find(params[:id])
+  end
+
+  def update
+    @short_url = ShortUrl.find(params[:id])
+    if @short_url.update(update_params)
+      flash.now.notice = t(&quot;admin.update.success&quot;)
+      redirect_to admin_short_url_path
+    else
+      flash.now.alert = t(&quot;admin.update.failed&quot;)
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def create_params
+    params.require(:short_url).permit(
+      :admin_id,
+      :label_name,
+      :original_url,
+      :utm_source,
+      :utm_medium,
+      :utm_campaign
+    )
+  end
+
+  def update_params
+    create_params
+  end
+end
+</code></pre>
+<h2 id="翻訳設定の追加"><a class="header" href="#翻訳設定の追加">翻訳設定の追加</a></h2>
+<p>翻訳設定を追加しておきます。</p>
+<p>Filename: <code>config/locales/models/ja.yml</code></p>
+<pre><code class="language-yaml">short_url:
+  id: ID
+  custom_id: カスタムKey
+  label_name: ラベル名
+  original_url: 短縮元URL
+  short_url: 短縮URL
+  parameter_url: パラメータ付きURL
+  utm_source: 広告主
+  utm_medium: メディア名
+  utm_campaign: キャンペーン名
+</code></pre>
+<p>Filename: <code>config/locales/views/admin/ja.yml</code></p>
+<pre><code class="language-yaml">short_urls:
+  breadcrumb:
+    index:
+      title: 短縮リンク
+    new:
+      title: 新規作成
+  index:
+    title: 短縮リンク設定
+  new:
+    title: 短縮リンクを作成する
+</code></pre>
+<h2 id="ビュー"><a class="header" href="#ビュー">ビュー</a></h2>
+<p>まず一覧画面を作成します。</p>
+<p>※サイドメニューに「短縮URL」を追加する場合は、ご自分で追加ください</p>
+<pre><code class="language-bash">mkdir -p app/views/admin/short_urls &amp;&amp; mkdir -p app/views/admin/short_urls/breadcrumb &amp;&amp; touch app/views/admin/short_urls/breadcrumb/_index.html.erb &amp;&amp; touch app/views/admin/short_urls/index.html.erb &amp;&amp; touch app/views/admin/short_urls/_index_table.html.erb
+</code></pre>
+<h3 id="一覧画面"><a class="header" href="#一覧画面">一覧画面</a></h3>
+<p>以下のように編集します。</p>
+<p>Filename: <code>app/views/admin/short_urls/index.html.erb</code></p>
+<pre><code class="language-erb">&lt;div class=&quot;l-container&quot;&gt;
+  &lt;%= render partial: &quot;layouts/admin/article_menu&quot; %&gt;
+  &lt;div class=&quot;l-main-view&quot;&gt;
+    &lt;div class=&quot;sw-main-header&quot;&gt;
+      &lt;div class=&quot;sw-main-header-title&quot;&gt;
+        &lt;%= t &quot;.title&quot; %&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sw-main-header-buttons&quot;&gt;
+        &lt;div class=&quot;sw-main-header-button&quot;&gt;
+          &lt;%= link_to new_admin_short_url_path, class: &quot;btn btn-primary&quot; do %&gt;
+            &lt;%= t &quot;buttons.create&quot; %&gt;
+          &lt;% end %&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;sw-main-body&quot;&gt;
+      &lt;ul class=&quot;breadcrumb p-3&quot;&gt;
+        &lt;%= render partial: &quot;admin/short_urls/breadcrumb/index&quot; %&gt;
+      &lt;/ul&gt;
+      &lt;%= render partial: &quot;admin/short_urls/index_table&quot; %&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="一覧テーブル"><a class="header" href="#一覧テーブル">一覧テーブル</a></h3>
+<p>Filename: <code>app/views/admin/short_urls/_index_table.html.erb</code></p>
+<pre><code class="language-erb">&lt;div class=&quot;sw-main-body-table table-responsive&quot;&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;&lt;/th&gt;
+        &lt;th&gt;名前&lt;/th&gt;
+        &lt;th&gt;短縮元URL&lt;/th&gt;
+        &lt;th&gt;作成日&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;% @short_urls.each do |short_url| %&gt;
+        &lt;tr&gt;
+          &lt;td class=&quot;rowlink&quot;&gt;
+            &lt;%= link_to admin_short_url_path(id: short_url&amp;.id) do %&gt;
+            &lt;% end %&gt;
+          &lt;/td&gt;
+          &lt;td style=&quot;min-width: 100px;&quot;&gt;
+            &lt;%= short_url&amp;.label_name %&gt;
+          &lt;/td&gt;
+          &lt;td style=&quot;min-width: 100px;&quot;&gt;
+            &lt;%= short_url&amp;.original_url %&gt;
+          &lt;/td&gt;
+          &lt;td style=&quot;min-width: 150px;&quot;&gt;
+            &lt;%= short_url&amp;.created_at %&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;% end %&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="一覧画面のパンくずリスト"><a class="header" href="#一覧画面のパンくずリスト">一覧画面のパンくずリスト</a></h3>
+<p>Filename: <code>app/views/admin/short_urls/breadcrumb/_index.html.erb</code></p>
+<pre><code class="language-erb">&lt;li&gt;
+  &lt;%= link_to admin_short_urls_path do %&gt;
+    &lt;%= t &quot;.title&quot; %&gt;
+  &lt;% end %&gt;
+&lt;/li&gt;
+</code></pre>
+<p>以下にアクセスしてみます。</p>
+<p>http://127.0.0.1:3000/admin/short_urls</p>
+<p><img src="./images/short_url_2.png" alt="img" /></p>
+<h3 id="作成画面"><a class="header" href="#作成画面">作成画面</a></h3>
+<p>作成画面ファイルを作成します。</p>
+<pre><code class="language-bash">touch app/views/admin/short_urls/new.html.erb &amp;&amp; touch app/views/admin/short_urls/_form_attributes.html.erb &amp;&amp; touch app/views/admin/short_urls/breadcrumb/_new.html.erb
+</code></pre>
+<h3 id="作成画面-1"><a class="header" href="#作成画面-1">作成画面</a></h3>
+<pre><code class="language-erb">&lt;div class=&quot;l-container&quot;&gt;
+  &lt;%= render partial: &quot;layouts/admin/article_menu&quot; %&gt;
+  &lt;div class=&quot;l-main-view&quot;&gt;
+    &lt;div class=&quot;sw-main-header&quot;&gt;
+      &lt;div class=&quot;sw-main-header-title&quot;&gt;
+        &lt;%= t &quot;.title&quot; %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;sw-main-body&quot;&gt;
+      &lt;ul class=&quot;breadcrumb p-3&quot;&gt;
+        &lt;%= render partial: &quot;admin/short_urls/breadcrumb/index&quot; %&gt;
+        &lt;%= render partial: &quot;admin/short_urls/breadcrumb/new&quot; %&gt;
+      &lt;/ul&gt;
+      &lt;div class=&quot;section&quot;&gt;
+        &lt;%= render :partial =&gt; &quot;admin/flash&quot; %&gt;
+      &lt;/div&gt;
+      &lt;%= render :partial =&gt; &quot;admin/short_urls/form_attributes&quot; %&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="作成画面のパンくずリスト"><a class="header" href="#作成画面のパンくずリスト">作成画面のパンくずリスト</a></h3>
+<pre><code class="language-erb">&lt;li&gt;
+  &lt;%= link_to new_admin_short_url_path do %&gt;
+    &lt;%= t &quot;breadcrumb.new&quot; %&gt;
+  &lt;% end %&gt;
+&lt;/li&gt;
+</code></pre>
+<h3 id="フォーム"><a class="header" href="#フォーム">フォーム</a></h3>
+<pre><code class="language-erb">&lt;%= form_with model: [:admin, @short_url], local: true do |f| %&gt;
+  &lt;%= f.hidden_field :admin_id, :value =&gt; current_admin&amp;.id %&gt;
+  &lt;div class=&quot;section&quot;&gt;
+    &lt;div class=&quot;d-flex justify-content-between border-bottom pb-3&quot;&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div class=&quot;d-flex&quot;&gt;
+        &lt;div&gt;
+          &lt;button class=&quot;btn btn-primary&quot;&gt;&lt;%= t &quot;buttons.save&quot; %&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;section&quot;&gt;
+    &lt;div class=&quot;card border-0&quot;&gt;
+      &lt;div class=&quot;card-body&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+          &lt;div class=&quot;col-md-12 mt-3&quot;&gt;
+            &lt;%= f.label :label_name, class: &quot;mb-1 form-label text-small text-muted&quot; do %&gt;
+              &lt;%= t &quot;activerecord.attributes.short_url.label_name&quot; %&gt;
+            &lt;% end %&gt;
+            &lt;%= f.text_field :label_name, autofocus: true, class: &quot;form-control&quot;, placeholder: &quot;&quot; %&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+          &lt;div class=&quot;col-md-12 mt-3&quot;&gt;
+            &lt;%= f.label :original_url, class: &quot;mb-1 form-label text-small text-muted&quot; do %&gt;
+              &lt;%= t &quot;activerecord.attributes.short_url.original_url&quot; %&gt;
+            &lt;% end %&gt;
+            &lt;%= f.text_field :original_url, autofocus: true, class: &quot;form-control&quot;, placeholder: &quot;&quot; %&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+          &lt;div class=&quot;col-md-4 mt-3&quot;&gt;
+            &lt;%= f.label :utm_source, class: &quot;mb-1 form-label text-small text-muted&quot; do %&gt;
+              &lt;%= t &quot;activerecord.attributes.short_url.utm_source&quot; %&gt;
+            &lt;% end %&gt;
+            &lt;%= f.text_field :utm_source, autofocus: true, class: &quot;form-control&quot;, placeholder: &quot;&quot; %&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;col-md-4 mt-3&quot;&gt;
+            &lt;%= f.label :utm_medium, class: &quot;mb-1 form-label text-small text-muted&quot; do %&gt;
+              &lt;%= t &quot;activerecord.attributes.short_url.utm_medium&quot; %&gt;
+            &lt;% end %&gt;
+            &lt;%= f.text_field :utm_medium, autofocus: true, class: &quot;form-control&quot;, placeholder: &quot;&quot; %&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;col-md-4 mt-3&quot;&gt;
+            &lt;%= f.label :utm_campaign, class: &quot;mb-1 form-label text-small text-muted&quot; do %&gt;
+              &lt;%= t &quot;activerecord.attributes.short_url.utm_campaign&quot; %&gt;
+            &lt;% end %&gt;
+            &lt;%= f.text_field :utm_campaign, autofocus: true, class: &quot;form-control&quot;, placeholder: &quot;&quot; %&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;% end %&gt;
+</code></pre>
+<p>以下にアクセスしてみます。</p>
+<p>※実際に作成してみてください</p>
+<p><img src="./images/short_url_3.png" alt="img" /></p>
+<p>http://127.0.0.1:3000/admin/short_urls/new</p>
+<h3 id="詳細画面ファイルを作成"><a class="header" href="#詳細画面ファイルを作成">詳細画面ファイルを作成</a></h3>
+<pre><code class="language-bash">touch app/views/admin/short_urls/show.html.erb &amp;&amp; touch app/views/admin/short_urls/breadcrumb/_show.html.erb
+</code></pre>
+<h3 id="詳細画面"><a class="header" href="#詳細画面">詳細画面</a></h3>
+<pre><code class="language-erb">&lt;div class=&quot;l-container&quot;&gt;
+  &lt;%= render partial: &quot;layouts/admin/article_menu&quot; %&gt;
+  &lt;div class=&quot;l-main-view&quot;&gt;
+    &lt;div class=&quot;sw-main-header&quot;&gt;
+      &lt;div class=&quot;sw-main-header-title&quot;&gt;
+        &lt;%= @short_url&amp;.label_name %&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sw-main-header-buttons&quot;&gt;
+        &lt;div class=&quot;sw-main-header-button&quot;&gt;
+          &lt;%= link_to edit_admin_short_url_path, class: &quot;btn btn-primary&quot; do %&gt;
+            &lt;%= t &quot;buttons.edit&quot; %&gt;
+          &lt;% end %&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;sw-main-body&quot;&gt;
+      &lt;ul class=&quot;breadcrumb p-3&quot;&gt;
+        &lt;%= render partial: &quot;admin/short_urls/breadcrumb/index&quot; %&gt;
+        &lt;%= render partial: &quot;admin/short_urls/breadcrumb/show&quot; %&gt;
+      &lt;/ul&gt;
+      &lt;div class=&quot;section&quot;&gt;
+        &lt;%= render :partial =&gt; &quot;admin/flash&quot; %&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;section&quot;&gt;
+        &lt;h2 class=&quot;admin-title&quot;&gt;短縮リンク&lt;/h2&gt;
+        &lt;div class=&quot;card&quot;&gt;
+          &lt;div class=&quot;card-body&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-md-6 mb-3&quot;&gt;
+                &lt;div class=&quot;model-key&quot;&gt;
+                  &lt;%= t &quot;activerecord.attributes.short_url.id&quot; %&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;model-value&quot;&gt;
+                  &lt;%= @short_url&amp;.id %&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-md-6 mb-3&quot;&gt;
+                &lt;div class=&quot;model-key&quot;&gt;
+                  &lt;%= t &quot;activerecord.attributes.short_url.label_name&quot; %&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;model-value&quot;&gt;
+                  &lt;%= @short_url&amp;.label_name %&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-md-12 mb-3&quot;&gt;
+                &lt;div class=&quot;model-key&quot;&gt;
+                  &lt;%= t &quot;activerecord.attributes.short_url.original_url&quot; %&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;model-value&quot;&gt;
+                  &lt;%= @short_url&amp;.original_url %&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-md-12 mb-3&quot;&gt;
+                &lt;div class=&quot;model-key&quot;&gt;
+                  &lt;%= t &quot;activerecord.attributes.short_url.short_url&quot; %&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;model-value&quot;&gt;
+                  &lt;%= @short_url&amp;.short_url %&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-md-12 mb-3&quot;&gt;
+                &lt;div class=&quot;model-key&quot;&gt;
+                  &lt;%= t &quot;activerecord.attributes.short_url.parameter_url&quot; %&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;model-value&quot;&gt;
+                  &lt;%= @short_url&amp;.parameter_url %&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-md-4 mb-3&quot;&gt;
+                &lt;div class=&quot;model-key&quot;&gt;
+                  &lt;%= t &quot;activerecord.attributes.short_url.utm_source&quot; %&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;model-value&quot;&gt;
+                  &lt;%= @short_url&amp;.utm_source %&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;col-md-4 mb-3&quot;&gt;
+                &lt;div class=&quot;model-key&quot;&gt;
+                  &lt;%= t &quot;activerecord.attributes.short_url.utm_medium&quot; %&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;model-value&quot;&gt;
+                  &lt;%= @short_url&amp;.utm_medium %&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;col-md-4 mb-3&quot;&gt;
+                &lt;div class=&quot;model-key&quot;&gt;
+                  &lt;%= t &quot;activerecord.attributes.short_url.utm_campaign&quot; %&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;model-value&quot;&gt;
+                  &lt;%= @short_url&amp;.utm_campaign %&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-md-6 mb-3&quot;&gt;
+                &lt;div class=&quot;model-key&quot;&gt;
+                  &lt;%= t &quot;common.created_at&quot; %&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;model-value&quot;&gt;
+                  &lt;%= @short_url&amp;.created_at %&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;col-md-6 mb-3&quot;&gt;
+                &lt;div class=&quot;model-key&quot;&gt;
+                  &lt;%= t &quot;common.updated_at&quot; %&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;model-value&quot;&gt;
+                  &lt;%= @short_url&amp;.updated_at %&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="詳細画面のパンくずリスト"><a class="header" href="#詳細画面のパンくずリスト">詳細画面のパンくずリスト</a></h3>
+<pre><code class="language-erb">&lt;li&gt;
+  &lt;%= link_to admin_short_url_path do %&gt;
+    &lt;%= t &quot;breadcrumb.show&quot; %&gt;
+  &lt;% end %&gt;
+&lt;/li&gt;
+</code></pre>
+<p>以下にアクセスしてみます。</p>
+<p>eg) http://127.0.0.1:3000/admin/short_urls/ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa # ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aaはご自分の環境で作成した短縮URLのIDに置き換えてください</p>
+<p><img src="./images/short_url_5.png" alt="img" /></p>
+<h3 id="編集画面のファイルを作成"><a class="header" href="#編集画面のファイルを作成">編集画面のファイルを作成</a></h3>
+<pre><code class="language-bash">touch app/views/admin/short_urls/edit.html.erb &amp;&amp; touch app/views/admin/short_urls/breadcrumb/_edit.html.erb
+</code></pre>
+<h3 id="編集画面"><a class="header" href="#編集画面">編集画面</a></h3>
+<pre><code class="language-erb">&lt;div class=&quot;l-container&quot;&gt;
+  &lt;%= render partial: &quot;layouts/admin/article_menu&quot; %&gt;
+  &lt;div class=&quot;l-main-view&quot;&gt;
+    &lt;div class=&quot;sw-main-header&quot;&gt;
+      &lt;div class=&quot;sw-main-header-title&quot;&gt;
+        &lt;%= @short_url&amp;.label_name %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;sw-main-body&quot;&gt;
+      &lt;ul class=&quot;breadcrumb p-3&quot;&gt;
+        &lt;%= render :partial =&gt; &quot;admin/short_urls/breadcrumb/index&quot; %&gt;
+        &lt;%= render :partial =&gt; &quot;admin/short_urls/breadcrumb/show&quot; %&gt;
+        &lt;%= render :partial =&gt; &quot;admin/short_urls/breadcrumb/edit&quot; %&gt;
+      &lt;/ul&gt;
+      &lt;div class=&quot;section&quot;&gt;
+        &lt;%= render :partial =&gt; &quot;admin/flash&quot; %&gt;
+      &lt;/div&gt;
+      &lt;%= render :partial =&gt; &quot;admin/short_urls/form_attributes&quot; %&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="編集画面のパンくずリスト"><a class="header" href="#編集画面のパンくずリスト">編集画面のパンくずリスト</a></h3>
+<pre><code class="language-erb">&lt;li&gt;
+  &lt;%= link_to edit_admin_tag_path do %&gt;
+    &lt;%= t &quot;breadcrumb.edit&quot; %&gt;
+  &lt;% end %&gt;
+&lt;/li&gt;
+</code></pre>
+<p>以下にアクセスしてみます。</p>
+<p>eg) http://127.0.0.1:3000/admin/short_urls/ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa/edit # ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aaはご自分の環境で作成した短縮URLのIDに置き換えてください</p>
+<p><img src="./images/short_url_4.png" alt="img" /></p>
+<p>これで短縮URLの管理ができるようになりました。</p>
+<p>次は短縮URLトラッキング機能について実装していきます。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../day-3/welcome.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../day-3/short-url-tracking.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../day-3/welcome.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../day-3/short-url-tracking.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+        <script>
+            window.playground_line_numbers = true;
+        </script>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js"></script>
+        <script src="../editor.js"></script>
+        <script src="../mode-rust.js"></script>
+        <script src="../theme-dawn.js"></script>
+        <script src="../theme-tomorrow_night.js"></script>
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../mermaid.min.js"></script>
+        <script src="../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

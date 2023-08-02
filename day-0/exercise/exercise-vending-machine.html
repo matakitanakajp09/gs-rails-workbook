@@ -1,0 +1,633 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Exercise - 自動販売機プログラム - 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="会員制メディア&amp;CMS開発による実践的アプローチ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../welcome.html">Welcome to 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</a></li><li class="chapter-item expanded "><a href="../../running-the-course.html"><strong aria-hidden="true">1.</strong> 本講座について</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../running-the-course/course-structure.html"><strong aria-hidden="true">1.1.</strong> 講座</a></li><li class="chapter-item expanded "><a href="../../running-the-course/course-building.html"><strong aria-hidden="true">1.2.</strong> 事前準備</a></li><li class="chapter-item expanded "><a href="../../running-the-course/demo-day.html"><strong aria-hidden="true">1.3.</strong> Demo Day</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day 0: Ruby基礎</li><li class="chapter-item expanded "><a href="../../day-0/what-is-ruby.html"><strong aria-hidden="true">2.</strong> Rubyとは</a></li><li class="chapter-item expanded "><a href="../../day-0/exercise/welcome.html"><strong aria-hidden="true">3.</strong> Exercise</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../day-0/exercise/exercise-janken.html"><strong aria-hidden="true">3.1.</strong> Exercise - じゃんけんプログラム</a></li><li class="chapter-item expanded "><a href="../../day-0/exercise/exercise-vending-machine.html" class="active"><strong aria-hidden="true">3.2.</strong> Exercise - 自動販売機プログラム</a></li></ol></li><li class="chapter-item expanded "><a href="../../day-0/appendix/welcome.html"><strong aria-hidden="true">4.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../day-0/appendix/program.html"><strong aria-hidden="true">4.1.</strong> プログラム・文・式</a></li><li class="chapter-item expanded "><a href="../../day-0/appendix/variables.html"><strong aria-hidden="true">4.2.</strong> 変数と定数</a></li><li class="chapter-item expanded "><a href="../../day-0/appendix/literal.html"><strong aria-hidden="true">4.3.</strong> リテラル</a></li><li class="chapter-item expanded "><a href="../../day-0/appendix/operator.html"><strong aria-hidden="true">4.4.</strong> 演算子式</a></li><li class="chapter-item expanded "><a href="../../day-0/appendix/control.html"><strong aria-hidden="true">4.5.</strong> 制御構文</a></li><li class="chapter-item expanded "><a href="../../day-0/appendix/call.html"><strong aria-hidden="true">4.6.</strong> メソッド呼び出し(super・ブロック付き・yield)</a></li><li class="chapter-item expanded "><a href="../../day-0/appendix/def.html"><strong aria-hidden="true">4.7.</strong> クラス/メソッドの定義</a></li><li class="chapter-item expanded "><a href="../../day-0/appendix/flexical.html"><strong aria-hidden="true">4.8.</strong> 字句構造</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day 0: Ruby on Rails基礎</li><li class="chapter-item expanded "><a href="../../day-0/what-is-ruby-on-rails.html"><strong aria-hidden="true">5.</strong> Ruby on Railsとは?</a></li><li class="chapter-item expanded "><a href="../../day-0/how-to-setup.html"><strong aria-hidden="true">6.</strong> Ruby on Railsの環境構築</a></li><li class="chapter-item expanded "><a href="../../day-0/web-development-overview.html"><strong aria-hidden="true">7.</strong> Ruby on Railsを用いたWeb開発の全体像</a></li><li class="chapter-item expanded affix "><li class="part-title">Day0: 事前学習</li><li class="chapter-item expanded "><a href="../../day-0/goal.html"><strong aria-hidden="true">8.</strong> 本講義プロジェクトMyCMSのER図</a></li><li class="chapter-item expanded "><a href="../../day-0/cms-sample.html"><strong aria-hidden="true">9.</strong> 記事管理機能⓪：サンプル</a></li><li class="chapter-item expanded affix "><li class="part-title">Day0 課題(Day1に向けた課題):</li><li class="chapter-item expanded "><a href="../../day-0/cms-tag.html"><strong aria-hidden="true">10.</strong> 記事管理機能①：タグ管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../day-0/cms-tag-index.html"><strong aria-hidden="true">10.1.</strong> 一覧画面</a></li><li class="chapter-item expanded "><a href="../../day-0/cms-tag-show.html"><strong aria-hidden="true">10.2.</strong> 詳細画面</a></li><li class="chapter-item expanded "><a href="../../day-0/cms-tag-edit.html"><strong aria-hidden="true">10.3.</strong> 編集画面</a></li><li class="chapter-item expanded "><a href="../../day-0/cms-tag-new.html"><strong aria-hidden="true">10.4.</strong> 作成画面</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day1 講義:</li><li class="chapter-item expanded "><a href="../../day-1/lecture.html"><strong aria-hidden="true">11.</strong> Day1 講義用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../day-1/handson.html"><strong aria-hidden="true">11.1.</strong> Day1 ハンズオン</a></li></ol></li><li class="chapter-item expanded "><a href="../../day-1/theme.html"><strong aria-hidden="true">12.</strong> Day2に向けた課題</a></li><li class="chapter-item expanded affix "><li class="part-title">Day2 講義:</li><li class="chapter-item expanded "><a href="../../day-2/day-1-qa.html"><strong aria-hidden="true">13.</strong> Day1 QA</a></li><li class="chapter-item expanded "><a href="../../day-2/lecture.html"><strong aria-hidden="true">14.</strong> Day2 講義用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../day-2/handson.html"><strong aria-hidden="true">14.1.</strong> Day2 ハンズオン</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../day-2/handson-auth-registration.html"><strong aria-hidden="true">14.1.1.</strong> 認証機能: 新規登録</a></li><li class="chapter-item expanded "><a href="../../day-2/handson-auth-session.html"><strong aria-hidden="true">14.1.2.</strong> 認証機能: ログイン</a></li><li class="chapter-item expanded "><a href="../../day-2/handson-payment.html"><strong aria-hidden="true">14.1.3.</strong> 決済機能</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../day-2/theme.html"><strong aria-hidden="true">15.</strong> Day3に向けた課題</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Day3 講義:</li><li class="chapter-item expanded "><a href="../../day-3/welcome.html"><strong aria-hidden="true">16.</strong> Day3用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../day-3/short-url.html"><strong aria-hidden="true">16.1.</strong> Day3: 短縮URL管理画面</a></li><li class="chapter-item expanded "><a href="../../day-3/short-url-tracking.html"><strong aria-hidden="true">16.2.</strong> Day3: 短縮URLトラッキング機能</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../../appendix/welcome.html"><strong aria-hidden="true">17.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../appendix/mvc-r.html"><strong aria-hidden="true">17.1.</strong> MVCとルーティング</a></li><li class="chapter-item expanded "><a href="../../appendix/routing.html"><strong aria-hidden="true">17.2.</strong> ルーティングについて</a></li><li class="chapter-item expanded "><a href="../../appendix/database-design.html"><strong aria-hidden="true">17.3.</strong> データベース構造と設計</a></li><li class="chapter-item expanded "><a href="../../appendix/database-migration.html"><strong aria-hidden="true">17.4.</strong> マイグレーション</a></li><li class="chapter-item expanded "><a href="../../appendix/active-record.html"><strong aria-hidden="true">17.5.</strong> ActiveRecordについて</a></li><li class="chapter-item expanded "><a href="../../appendix/controller.html"><strong aria-hidden="true">17.6.</strong> Controllerにまつわる処理ついて</a></li><li class="chapter-item expanded "><a href="../../appendix/rails-dev-command.html"><strong aria-hidden="true">17.7.</strong> Railsでよく使われるコマンド</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="exercise---自動販売機プログラム"><a class="header" href="#exercise---自動販売機プログラム">Exercise - 自動販売機プログラム</a></h1>
+<h2 id="なぜこのプログラムを作るのか"><a class="header" href="#なぜこのプログラムを作るのか">なぜこのプログラムを作るのか</a></h2>
+<p>自動販売機のロジックは、じゃんけんロジックよりも難しいですが、じゃんけんロジックで学んだことを使いながら、
+さらに発展的な学習ができると考え、題材として選択しました。</p>
+<h2 id="自動販売機プログラムの仕様"><a class="header" href="#自動販売機プログラムの仕様">自動販売機プログラムの仕様</a></h2>
+<ul>
+<li>飲み物を自由に設定できる</li>
+<li>支払い方法は、現金と電子マネーを設定できる</li>
+</ul>
+<h2 id="完成形"><a class="header" href="#完成形">完成形</a></h2>
+<p>Filename: lib/training/vending_machine.rb</p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+module VendingMachine
+  class VendingMachine
+    attr_accessor :drinks, :payments, :inventories, :person
+
+    def initialize(person:)
+      @person = person
+      @drinks = Drink.initialize_drinks
+      @payments = Payment.initialize_payments
+      @inventories = Hash[*@drinks.map do |drink|
+        [drink.key.to_sym, drink.inventory]
+      end.flatten]
+    end
+
+    def buy!
+      @person.display
+      drink = choose_drink(@person)
+      payment = choose_payment(@person)
+      payment.transact(@person, drink)
+      manage_invetory!(drink)
+    end
+
+    def choose_drink(person)
+      display_drinks
+      drink_inputed = gets
+      selected_drink = select_drink(drink_inputed.to_i)
+      selected_drink.display(person.name)
+      selected_drink
+    end
+
+    def display_drinks
+      puts &quot;飲み物を番号で選んでください。\n#{format_drinks}&quot;
+    end
+
+    def format_drinks
+      @drinks.map do |drink|
+        &quot;#{drink.id}: #{drink.name}&quot;
+      end
+    end
+
+    def select_drink(id)
+      selected_drink = select_drink_by_id(id)
+      return selected_drink unless selected_drink.nil?
+
+      puts &quot;飲み物が見つかりませんでした。終了します&quot;
+      exit
+    end
+
+    def select_drink_by_id(id)
+      @drinks.find { |drink| drink.id == id }
+    end
+
+    def choose_payment(person)
+      display_payments
+      payment_inputed = gets
+      selected_payment = select_payment(payment_inputed.to_i)
+      selected_payment.display(person.name)
+      selected_payment
+    end
+
+    def select_payment(id)
+      selected_payment = select_payment_by_id(id)
+      return selected_payment unless selected_payment.nil?
+
+      puts &quot;支払い方法が見つかりませんでした。終了します&quot;
+      exit
+    end
+
+    def select_payment_by_id(id)
+      @payments.find { |payment| payment.id == id }
+    end
+
+    def display_payments
+      puts &quot;支払い方法を番号で選んでください。\n#{format_payments}&quot;
+    end
+
+    def format_payments
+      @payments.map do |payment|
+        &quot;#{payment.id}: #{payment.name}&quot;
+      end
+    end
+
+    def manage_invetory!(drink)
+      target_drink_inventory = @inventories[drink.key.to_sym]
+      rest_of_inventory = target_drink_inventory - 1
+      @inventories[drink.key.to_sym] = rest_of_inventory
+      puts &quot;#{drink.name}の在庫：#{rest_of_inventory}個&quot;
+      puts &quot;全体の在庫：#{@inventories}&quot;
+    end
+  end
+
+  class Drink
+    attr_accessor :id, :key, :name, :price, :temperature_type, :inventory
+
+    def initialize(id, key, name, price, temperature_type, inventory)
+      @id = id
+      @key = key
+      @name = name
+      @price = price
+      @temperature_type = temperature_type
+      @inventory = inventory
+    end
+
+    def self.initialize_drinks
+      [
+        new(1, &quot;cola&quot;, &quot;Cola&quot;, 100, &quot;cold&quot;, 10),
+        new(2, &quot;tea&quot;, &quot;お〜いお茶&quot;, 150, &quot;hot&quot;, 5),
+        new(3, &quot;pepsi&quot;, &quot;ペプシ&quot;, 100, &quot;cold&quot;, 7),
+        new(4, &quot;oshiruko&quot;, &quot;おしるこ&quot;, 80, &quot;hot&quot;, 9),
+        new(5, &quot;water&quot;, &quot;水&quot;, 130, &quot;cold&quot;, 12)
+      ]
+    end
+
+    def display(person_name)
+      puts &quot;#{person_name}が選んだ飲み物は：#{@name}, #{@price}円&quot;
+    end
+  end
+
+  class Person
+    attr_accessor :name, :cash, :e_cash
+
+    def initialize(name = &quot;Noname&quot;, cash = 0, e_cash = 0)
+      @name = name
+      @cash = cash
+      @e_cash = e_cash
+    end
+
+    def display
+      puts &quot;購入者：#{@name}, 現金：#{@cash}円, 電子マネー：#{@e_cash}円&quot;
+    end
+  end
+
+  class Payment
+    TXT_CASH = &quot;cash&quot;
+    TXT_E_CASH = &quot;e_cash&quot;
+
+    attr_accessor :id, :name, :payment_type
+
+    def initialize(id, name, payment_type)
+      @id = id
+      @name = name
+      @payment_type = payment_type
+    end
+
+    def self.initialize_payments
+      [
+        new(1, &quot;現金&quot;, TXT_CASH),
+        new(2, &quot;電子マネー&quot;, TXT_E_CASH)
+      ]
+    end
+
+    def display(person_name)
+      puts &quot;#{person_name}が選んだ支払い方法は：#{@name}&quot;
+    end
+
+    def transact(person, drink)
+      person_money = get_person_money(person)
+      drink_price = drink.price
+
+      if can_buy?(person_money, drink_price, drink.inventory)
+        change = charge!(person_money, drink_price)
+        puts &quot;購入者の#{@name}残高：#{change}円&quot;
+      else
+        puts &quot;#{@name}もしくは在庫が不足しています。プログラムを終了します&quot;
+        exit
+      end
+    end
+
+    def get_person_money(person)
+      case @payment_type
+      when TXT_CASH
+        person.cash
+      when TXT_E_CASH
+        person.e_cash
+      end
+    end
+
+    def can_buy?(person_money, drink_price, drink_inventory)
+      person_money &gt;= drink_price &amp;&amp; drink_inventory.positive?
+    end
+
+    def charge!(person_money, drink_price)
+      person_money - drink_price
+    end
+  end
+end
+
+# 呼び出し側
+person = VendingMachine::Person.new(&quot;Taro&quot;, 10, 2000)
+vending_machine = VendingMachine::VendingMachine.new(person: person)
+vending_machine.buy!
+#=&gt; 購入者：Taro, 現金：10円, 電子マネー：2000円
+# 飲み物を番号で選んでください。
+# [&quot;1: Cola&quot;, &quot;2: お〜いお茶&quot;, &quot;3: ペプシ&quot;, &quot;4: おしるこ&quot;, &quot;5: 水&quot;]
+# 1
+# Taroが選んだ飲み物は：Cola, 100円
+# 支払い方法を番号で選んでください。
+# [&quot;1: 現金&quot;, &quot;2: 電子マネー&quot;]
+# 2
+# Taroが選んだ支払い方法は：電子マネー
+# 購入可能です
+# Colaの在庫：9個
+# 全体の在庫：{:cola=&gt;9, :tea=&gt;5, :pepsi=&gt;7, :oshiruko=&gt;9, :water=&gt;12}
+</code></pre>
+<p>キーワード</p>
+<blockquote>
+</blockquote>
+<h2 id="自動販売機プログラムで使うrubyが定義するメソッド忘れても良い"><a class="header" href="#自動販売機プログラムで使うrubyが定義するメソッド忘れても良い">自動販売機プログラムで使うRubyが定義するメソッド（忘れても良い）</a></h2>
+<h3 id="gets"><a class="header" href="#gets">gets</a></h3>
+<p>getsメソッドは、標準入力から文字列を取得するメソッドです。</p>
+<p>※標準入力とは、キーボードからの入力や、ファイルからの入力など、プログラムに入力を与えることができるものを指します。</p>
+<pre><code class="language-ruby">drink_inputed = gets
+
+#=&gt; 飲み物を番号で選んでください。
+# [&quot;1: Cola&quot;, &quot;2: お〜いお茶&quot;, &quot;3: ペプシ&quot;, &quot;4: おしるこ&quot;, &quot;5: 水&quot;]
+#
+</code></pre>
+<p>1が入力された場合、<code>drink_inputed</code>には<code>1\n</code>が代入されます。</p>
+<h2 id="rubyのreturn"><a class="header" href="#rubyのreturn">Rubyのreturn</a></h2>
+<p>プログラミング言語を学ぶと、必ず出てくるのがreturnです。Rubyにおいてもreturnは存在しますが、returnを書かなくてもメソッドの最後に評価した値が返り値となります。</p>
+<p>※明示的にreturnを書くこともありますが、基本的には書かなくても良いです。</p>
+<pre><code class="language-ruby">def format_payments
+  @payments.map do |payment|
+    &quot;#{payment.id}: #{payment.name}&quot;
+  end
+end
+</code></pre>
+<p>明示的にreturnを書く場合は、以下のように書きます。</p>
+<pre><code class="language-ruby">def format_payments
+  return @payments.map do |payment|
+    &quot;#{payment.id}: #{payment.name}&quot;
+  end
+end
+</code></pre>
+<p>ただ多くの場合は、returnを書かない方がRubyらしい書き方となります。</p>
+<h3 id="早期リターン"><a class="header" href="#早期リターン">早期リターン</a></h3>
+<p>早期リターンとは、メソッドの途中でreturnを書くことです。以下のように、メソッドの途中でreturnを書くことで、メソッドの処理を途中で終了させることができます。いくつかの書き換え方がありますが、どれも同義で、主に可読性を考慮して書き換えます。</p>
+<pre><code class="language-ruby">def print_message(user)
+  return puts &quot;ユーザーが存在しません&quot; if user.nil?
+
+  puts &quot;ユーザー名：#{user.name}&quot;
+end
+
+# 1. 上記の書き換え
+# def print_message(user)
+#   if user.nil?
+#     puts &quot;ユーザーが存在しません&quot;
+#     return
+#   end
+
+#   puts &quot;ユーザー名：#{user.name}&quot;
+# end
+
+# 2. 上記の書き換え
+# def print_message(user)
+#   if user.nil?
+#     puts &quot;ユーザーが存在しません&quot;
+#   else
+#     puts &quot;ユーザー名：#{user.name}&quot;
+#   end
+# end
+</code></pre>
+<pre><code class="language-ruby">def select_drink(id)
+  selected_drink = select_drink_by_id(id)
+  return selected_drink unless selected_drink.nil?
+
+  puts &quot;飲み物が見つかりませんでした。終了します&quot;
+  exit
+end
+</code></pre>
+<h2 id="クラスメソッド"><a class="header" href="#クラスメソッド">クラスメソッド</a></h2>
+<p>Rubyにおけるクラスメソッドは、特定のクラスに関連付けられたメソッドのことを指します。クラスメソッドはそのクラスのインスタンスではなく、クラス自体に対して呼び出します。これらは、通常、そのクラス全体に関連する動作を定義するために使用されます。</p>
+<p>クラスメソッドは、メソッド名の前に「self.」を付けることで定義します。ここでの「self」は、そのメソッドが定義されているコンテキスト（この場合はクラス）を参照します。</p>
+<pre><code class="language-ruby">class Drink
+  # クラスメソッド
+  def self.initialize_drinks
+    [
+      new(1, &quot;cola&quot;, &quot;Cola&quot;, 100, &quot;cold&quot;, 10),
+      new(2, &quot;tea&quot;, &quot;お〜いお茶&quot;, 150, &quot;hot&quot;, 5),
+      new(3, &quot;pepsi&quot;, &quot;ペプシ&quot;, 100, &quot;cold&quot;, 7),
+      new(4, &quot;oshiruko&quot;, &quot;おしるこ&quot;, 80, &quot;hot&quot;, 9),
+      new(5, &quot;water&quot;, &quot;水&quot;, 130, &quot;cold&quot;, 12)
+    ]
+  end
+
+  # 上記は以下のように書き換えることもできます。
+  # class &lt;&lt; self
+  #   [
+  #     new(1, &quot;cola&quot;, &quot;Cola&quot;, 100, &quot;cold&quot;, 10),
+  #     new(2, &quot;tea&quot;, &quot;お〜いお茶&quot;, 150, &quot;hot&quot;, 5),
+  #     new(3, &quot;pepsi&quot;, &quot;ペプシ&quot;, 100, &quot;cold&quot;, 7),
+  #     new(4, &quot;oshiruko&quot;, &quot;おしるこ&quot;, 80, &quot;hot&quot;, 9),
+  #     new(5, &quot;water&quot;, &quot;水&quot;, 130, &quot;cold&quot;, 12)
+  #   ]
+  # end
+
+  # インスタンスメソッド
+  def display(person_name)
+    puts &quot;#{person_name}が選んだ飲み物は：#{@name}, #{@price}円&quot;
+  end
+end
+</code></pre>
+<p>それぞれのメソッドを呼び出す場合は、以下のように呼び出します。</p>
+<pre><code class="language-ruby"># クラスメソッドの呼び出し
+# クラスメソッドは、クラス名.メソッド名で呼び出します。クラスから直接呼び出すことができます。
+Drink.initialize_drinks
+#=&gt; ドリンク情報が初期化される
+
+# インスタンスメソッドの呼び出し
+# インスタンスメソッドは、インスタンスを生成してから呼び出します。
+drink = Drink.new(1, &quot;cola&quot;, &quot;Cola&quot;, 100, &quot;cold&quot;, 10)
+drink.display(&quot;たろう&quot;)
+#=&gt; たろうが選んだ飲み物は：Cola, 100円
+</code></pre>
+<h2 id="関数の引数"><a class="header" href="#関数の引数">関数の引数</a></h2>
+<h3 id="デフォルト引数"><a class="header" href="#デフォルト引数">デフォルト引数</a></h3>
+<p>ソッド定義の中で引数にデフォルトの値を設定することです。これにより、メソッド呼び出し時にその引数を省略した場合、デフォルトの値が自動的に使用されます。</p>
+<pre><code class="language-ruby">def greet(name = &quot;world&quot;)
+  puts &quot;Hello, #{name}!&quot;
+end
+
+greet(&quot;Ruby&quot;)  # =&gt; &quot;Hello, Ruby!&quot;
+greet          # =&gt; &quot;Hello, world!&quot;
+</code></pre>
+<h3 id="名前付き引数またはキーワード引数"><a class="header" href="#名前付き引数またはキーワード引数">名前付き引数（またはキーワード引数）</a></h3>
+<p>メソッド呼び出し時に引数名（キー）とその値を指定することです。これにより、引数の順序を気にせずにメソッドを呼び出すことができます。また、メソッド定義の可読性も向上します。</p>
+<pre><code class="language-ruby">def person_info(name:, age:, city:)
+  puts &quot;#{name} is #{age} years old and lives in #{city}.&quot;
+end
+
+person_info(name: &quot;Alice&quot;, age: 25, city: &quot;Tokyo&quot;)
+# =&gt; &quot;Alice is 25 years old and lives in Tokyo.&quot;
+</code></pre>
+<h2 id="メソッド群"><a class="header" href="#メソッド群">メソッド群</a></h2>
+<p>自動販売機プログラムで使用されるメソッドについていくつか紹介します。</p>
+<h3 id="map-と-each"><a class="header" href="#map-と-each">map と each</a></h3>
+<p>よく使うメソッドとして、<code>map</code>と<code>each</code>があります。どちらも配列の要素を順番に取り出して、ブロックの処理を実行します。違いは、<code>map</code>はブロックの戻り値を配列にして返すことです。<code>each</code>はブロックの戻り値を返しません。</p>
+<pre><code class="language-ruby">array = [1, 2, 3]
+
+array.each do |num|
+  num * 2
+end
+
+#=&gt; [1, 2, 3]
+
+array.map do |num|
+  num * 2
+end
+
+#=&gt; [2, 4, 6]
+</code></pre>
+<p>基本的に<code>each</code>は単純な繰り返し処理、<code>map</code>は繰り返し処理を行いながら配列を作成したい場合に使います。</p>
+<h3 id="find-と-select"><a class="header" href="#find-と-select">find と select</a></h3>
+<p>findは、ブロックの戻り値が真になった最初の要素を返します。selectは、ブロックの戻り値が真になった要素を全て返します。</p>
+<pre><code class="language-ruby">array = [1, 2, 3, 4, 5]
+
+array.find do |num|
+  num.even?
+end
+
+#=&gt; 2
+
+array.select do |num|
+  num.even?
+end
+
+#=&gt; [2, 4]
+</code></pre>
+<h3 id="flatten"><a class="header" href="#flatten">flatten</a></h3>
+<p>flattenは、多次元配列を一次元配列にします。</p>
+<pre><code class="language-ruby">array = [[1, 2], [3, 4], [5, 6]]
+
+array.flatten
+#=&gt; [1, 2, 3, 4, 5, 6]
+</code></pre>
+<h2 id="とのつくメソッドのつくり方"><a class="header" href="#とのつくメソッドのつくり方">「?」と「!」のつくメソッドのつくり方</a></h2>
+<p>Rubyでは、メソッド名の最後に「?」や「!」をつけることができます。これらのメソッドは、Rubyの慣習として、以下のような意味を持ちます。</p>
+<h3 id="をつけるメソッド"><a class="header" href="#をつけるメソッド">?をつけるメソッド</a></h3>
+<p>メソッド名の最後に「?」がついていると、そのメソッドは真偽値（真または偽）を返すことを示しています。これは、ある条件が真であるか偽であるかを問い合わせるメソッドであることを示します。たとえば、RubyのArrayクラスのempty?メソッドは、配列が空であるかどうかを確認します。</p>
+<pre><code class="language-ruby">array = []
+puts array.empty?
+# =&gt; true
+</code></pre>
+<h3 id="をつけるメソッド-1"><a class="header" href="#をつけるメソッド-1">!をつけるメソッド</a></h3>
+<p>メソッド名の最後に「!」がついていると、そのメソッドが何らかの形で「危険」な動作を行うことを示しています。たとえば、オブジェクトを変更する（つまり、副作用を持つ）メソッドや、エラーを引き起こす可能性があるメソッドなどです。この記号は、メソッドが通常の動作とは異なる何らかの振る舞いをすることを示しています。</p>
+<pre><code class="language-ruby">str = &quot;Hello, world!&quot;
+str.gsub!('world', 'Ruby')
+puts str  # =&gt; &quot;Hello, Ruby!&quot;
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../day-0/exercise/exercise-janken.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../day-0/appendix/welcome.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../day-0/exercise/exercise-janken.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../day-0/appendix/welcome.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+        <script>
+            window.playground_line_numbers = true;
+        </script>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../../ace.js"></script>
+        <script src="../../editor.js"></script>
+        <script src="../../mode-rust.js"></script>
+        <script src="../../theme-dawn.js"></script>
+        <script src="../../theme-tomorrow_night.js"></script>
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

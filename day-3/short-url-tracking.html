@@ -1,0 +1,849 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day3: 短縮URLトラッキング機能 - 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="会員制メディア&amp;CMS開発による実践的アプローチ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../welcome.html">Welcome to 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</a></li><li class="chapter-item expanded "><a href="../running-the-course.html"><strong aria-hidden="true">1.</strong> 本講座について</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../running-the-course/course-structure.html"><strong aria-hidden="true">1.1.</strong> 講座</a></li><li class="chapter-item expanded "><a href="../running-the-course/course-building.html"><strong aria-hidden="true">1.2.</strong> 事前準備</a></li><li class="chapter-item expanded "><a href="../running-the-course/demo-day.html"><strong aria-hidden="true">1.3.</strong> Demo Day</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day 0: Ruby基礎</li><li class="chapter-item expanded "><a href="../day-0/what-is-ruby.html"><strong aria-hidden="true">2.</strong> Rubyとは</a></li><li class="chapter-item expanded "><a href="../day-0/exercise/welcome.html"><strong aria-hidden="true">3.</strong> Exercise</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/exercise/exercise-janken.html"><strong aria-hidden="true">3.1.</strong> Exercise - じゃんけんプログラム</a></li><li class="chapter-item expanded "><a href="../day-0/exercise/exercise-vending-machine.html"><strong aria-hidden="true">3.2.</strong> Exercise - 自動販売機プログラム</a></li></ol></li><li class="chapter-item expanded "><a href="../day-0/appendix/welcome.html"><strong aria-hidden="true">4.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/appendix/program.html"><strong aria-hidden="true">4.1.</strong> プログラム・文・式</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/variables.html"><strong aria-hidden="true">4.2.</strong> 変数と定数</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/literal.html"><strong aria-hidden="true">4.3.</strong> リテラル</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/operator.html"><strong aria-hidden="true">4.4.</strong> 演算子式</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/control.html"><strong aria-hidden="true">4.5.</strong> 制御構文</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/call.html"><strong aria-hidden="true">4.6.</strong> メソッド呼び出し(super・ブロック付き・yield)</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/def.html"><strong aria-hidden="true">4.7.</strong> クラス/メソッドの定義</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/flexical.html"><strong aria-hidden="true">4.8.</strong> 字句構造</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day 0: Ruby on Rails基礎</li><li class="chapter-item expanded "><a href="../day-0/what-is-ruby-on-rails.html"><strong aria-hidden="true">5.</strong> Ruby on Railsとは?</a></li><li class="chapter-item expanded "><a href="../day-0/how-to-setup.html"><strong aria-hidden="true">6.</strong> Ruby on Railsの環境構築</a></li><li class="chapter-item expanded "><a href="../day-0/web-development-overview.html"><strong aria-hidden="true">7.</strong> Ruby on Railsを用いたWeb開発の全体像</a></li><li class="chapter-item expanded affix "><li class="part-title">Day0: 事前学習</li><li class="chapter-item expanded "><a href="../day-0/goal.html"><strong aria-hidden="true">8.</strong> 本講義プロジェクトMyCMSのER図</a></li><li class="chapter-item expanded "><a href="../day-0/cms-sample.html"><strong aria-hidden="true">9.</strong> 記事管理機能⓪：サンプル</a></li><li class="chapter-item expanded affix "><li class="part-title">Day0 課題(Day1に向けた課題):</li><li class="chapter-item expanded "><a href="../day-0/cms-tag.html"><strong aria-hidden="true">10.</strong> 記事管理機能①：タグ管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/cms-tag-index.html"><strong aria-hidden="true">10.1.</strong> 一覧画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-show.html"><strong aria-hidden="true">10.2.</strong> 詳細画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-edit.html"><strong aria-hidden="true">10.3.</strong> 編集画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-new.html"><strong aria-hidden="true">10.4.</strong> 作成画面</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day1 講義:</li><li class="chapter-item expanded "><a href="../day-1/lecture.html"><strong aria-hidden="true">11.</strong> Day1 講義用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-1/handson.html"><strong aria-hidden="true">11.1.</strong> Day1 ハンズオン</a></li></ol></li><li class="chapter-item expanded "><a href="../day-1/theme.html"><strong aria-hidden="true">12.</strong> Day2に向けた課題</a></li><li class="chapter-item expanded affix "><li class="part-title">Day2 講義:</li><li class="chapter-item expanded "><a href="../day-2/day-1-qa.html"><strong aria-hidden="true">13.</strong> Day1 QA</a></li><li class="chapter-item expanded "><a href="../day-2/lecture.html"><strong aria-hidden="true">14.</strong> Day2 講義用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-2/handson.html"><strong aria-hidden="true">14.1.</strong> Day2 ハンズオン</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-2/handson-auth-registration.html"><strong aria-hidden="true">14.1.1.</strong> 認証機能: 新規登録</a></li><li class="chapter-item expanded "><a href="../day-2/handson-auth-session.html"><strong aria-hidden="true">14.1.2.</strong> 認証機能: ログイン</a></li><li class="chapter-item expanded "><a href="../day-2/handson-payment.html"><strong aria-hidden="true">14.1.3.</strong> 決済機能</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../day-2/theme.html"><strong aria-hidden="true">15.</strong> Day3に向けた課題</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Day3 講義:</li><li class="chapter-item expanded "><a href="../day-3/welcome.html"><strong aria-hidden="true">16.</strong> Day3用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-3/short-url.html"><strong aria-hidden="true">16.1.</strong> Day3: 短縮URL管理画面</a></li><li class="chapter-item expanded "><a href="../day-3/short-url-tracking.html" class="active"><strong aria-hidden="true">16.2.</strong> Day3: 短縮URLトラッキング機能</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../appendix/welcome.html"><strong aria-hidden="true">17.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../appendix/mvc-r.html"><strong aria-hidden="true">17.1.</strong> MVCとルーティング</a></li><li class="chapter-item expanded "><a href="../appendix/routing.html"><strong aria-hidden="true">17.2.</strong> ルーティングについて</a></li><li class="chapter-item expanded "><a href="../appendix/database-design.html"><strong aria-hidden="true">17.3.</strong> データベース構造と設計</a></li><li class="chapter-item expanded "><a href="../appendix/database-migration.html"><strong aria-hidden="true">17.4.</strong> マイグレーション</a></li><li class="chapter-item expanded "><a href="../appendix/active-record.html"><strong aria-hidden="true">17.5.</strong> ActiveRecordについて</a></li><li class="chapter-item expanded "><a href="../appendix/controller.html"><strong aria-hidden="true">17.6.</strong> Controllerにまつわる処理ついて</a></li><li class="chapter-item expanded "><a href="../appendix/rails-dev-command.html"><strong aria-hidden="true">17.7.</strong> Railsでよく使われるコマンド</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day3-短縮urlトラッキング機能"><a class="header" href="#day3-短縮urlトラッキング機能">Day3: 短縮URLトラッキング機能</a></h1>
+<p>機能要件を再掲します。</p>
+<ul>
+<li>インプレッション数、クリック数のカウントをすることができます</li>
+<li>インプレッション数、クリック数は、Redisを用いて一時保存し、定期的にDBできるように、バッチ処理を実装します</li>
+</ul>
+<h2 id="redisの説明と使用目的"><a class="header" href="#redisの説明と使用目的">Redisの説明と使用目的</a></h2>
+<p>Redisは、インメモリ型のデータベースです。今回は、インプレッション数、クリック数をカウントするために使用します。
+インプレッション数、クリック数をカウントするために、毎回データベースに保存すると、データベースに負荷がかかります。
+一時的なデータを保存するために、Redisを使用して、定期的にデータベースに保存するようにします。</p>
+<h2 id="redisサーバーの設定"><a class="header" href="#redisサーバーの設定">Redisサーバーの設定</a></h2>
+<p>ターミナルで、以下のコマンドを実行します。</p>
+<pre><code class="language-bash">apt-get update &amp;&amp; apt-get install -y redis-server
+</code></pre>
+<h3 id="dockerfileを更新"><a class="header" href="#dockerfileを更新">Dockerfileを更新</a></h3>
+<p>L12行目の最後に、<code>redis-server</code>を追加します。</p>
+<pre><code class="language-dockerfile">RUN apt-get update -qq &amp;&amp; apt-get install -y build-essential nodejs yarn vim zlib1g-dev liblzma-dev patch redis-server
+</code></pre>
+<h3 id="entrypointlocalshを更新"><a class="header" href="#entrypointlocalshを更新">entrypoint.local.shを更新</a></h3>
+<p>Filename: <code>entrypoint.local.sh</code></p>
+<pre><code class="language-sh">#!/bin/bash
+set -e
+
+redis-server --daemonize yes
+
+# https://github.com/evanw/esbuild/issues/1511
+
+# yarn build --watch &lt; /dev/zero &amp; yarn build:css --watch &amp; bundle exec rails s -b 0.0.0.0
+yarn build --watch &lt; /dev/zero &amp; yarn build:css --watch
+</code></pre>
+<h2 id="redisサーバーの起動を確認する"><a class="header" href="#redisサーバーの起動を確認する">Redisサーバーの起動を確認する</a></h2>
+<pre><code class="language-bash">redis-server
+</code></pre>
+<p>以下のように表示されればOKです。</p>
+<pre><code class="language-console">/workspace# redis-server
+14247:C 30 Jul 2023 15:31:58.500 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+14247:C 30 Jul 2023 15:31:58.500 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=14247, just started
+14247:C 30 Jul 2023 15:31:58.500 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 6.0.16 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 14247
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+14247:M 30 Jul 2023 15:31:58.509 # Server initialized
+14247:M 30 Jul 2023 15:31:58.514 * Ready to accept connections
+</code></pre>
+<p>Ctrl + CでRedisサーバーを停止します。</p>
+<h2 id="redis用の秘匿情報を設定"><a class="header" href="#redis用の秘匿情報を設定">Redis用の秘匿情報を設定</a></h2>
+<p>ターミナルを開いて、以下のコマンドを実行します。</p>
+<pre><code class="language-bash">EDITOR=vim bin/rails credentials:edit -e development
+</code></pre>
+<pre><code class="language-vim">redis:
+  host: 127.0.0.1
+  port: 6379
+</code></pre>
+<h3 id="redisの接続確認"><a class="header" href="#redisの接続確認">Redisの接続確認</a></h3>
+<p><code>redis-server</code>を起動します。</p>
+<pre><code class="language-bash">redis-server --daemonize yes
+</code></pre>
+<p>RailsコンソールからRedisに接続できることを確認します。</p>
+<pre><code class="language-bash">bin/rails c
+</code></pre>
+<p>Redisクライアントを作成するコードを実行します。</p>
+<pre><code class="language-ruby">Redis.current
+=&gt; #&lt;Redis client v4.5.1 for redis://127.0.0.1:6379/0&gt;
+</code></pre>
+<p>OKの場合はRedisに接続できています。</p>
+<pre><code class="language-ruby">Redis.current.set(&quot;test&quot;, &quot;test&quot;)
+#=&gt; &quot;OK&quot;
+</code></pre>
+<p>上記でRedisに保存した値を取得する場合は、以下のコードを実行します。</p>
+<pre><code class="language-ruby">Redis.current.get(&quot;test&quot;)
+#=&gt; &quot;test&quot;
+</code></pre>
+<p>※Redisには色んな関数が用意されています。詳しくは、<a href="https://github.com/redis/redis-rb">https://github.com/redis/redis-rb</a>を参照してください。</p>
+<h2 id="redisのラッパークラスを作成"><a class="header" href="#redisのラッパークラスを作成">Redisのラッパークラスを作成</a></h2>
+<p><code>lib</code>ディレクトリ以下に作成していきます。</p>
+<pre><code class="language-bash">mkdir -p lib/cms_redis &amp;&amp; touch lib/cms_redis/core.rb
+</code></pre>
+<p>以下のように編集します。</p>
+<p>Filename: <code>lib/cms_redis/core.rb</code></p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+module CmsRedis
+  module Core
+    RAILS_MAX_THREADS = 16
+    REDIS_TIMEOUT = 1
+    EXPIRES = 60 * 60
+
+    class Pool
+      class Wrapper &lt; ::ConnectionPool::Wrapper
+        def initialize(pool)
+          @pool = pool
+        end
+      end
+
+      class &lt;&lt; self
+        def with(&amp;block)
+          pool.with(&amp;block)
+        end
+
+        def connect
+          Wrapper.new(pool)
+        end
+
+        private
+
+        def pool
+          @pool ||= ::ConnectionPool.new(
+            size: ENV.fetch(&quot;RAILS_MAX_THREADS&quot;, RAILS_MAX_THREADS).to_i,
+            timeout: ENV.fetch(&quot;REDIS_TIMEOUT&quot;, REDIS_TIMEOUT).to_i
+          ) do
+            ::Redis.new(Rails.application.credentials.redis.try(&amp;:to_h))
+          end
+        end
+      end
+    end
+
+    class Client
+      # Redisクライアントを初期化する
+      def initialize(cache_key = &quot;&quot;, expires = EXPIRES)
+        @connection = ::CmsRedis::Core::Pool.connect
+        @cache_key = cache_key
+        @expires = expires
+      end
+
+      # Redisに保存されている値を取得する&amp;整形する
+      def fetch
+        return_array_with_sym = array_with_sym
+        return return_array_with_sym unless return_array_with_sym.blank?
+
+        return unless block_given?
+
+        array = yield
+
+        set(array)
+        array_with_sym
+      end
+
+      # Redisに保存されている値を取得する
+      def get
+        @connection.get(@cache_key)
+      end
+
+      # Redisに保存する。その際、有効期限を設定する
+      def set(array)
+        @connection.with do |redis|
+          redis.set(@cache_key, array.to_json)
+          redis.expire(@cache_key, @expires)
+        end
+      end
+
+      # Redisに保存されている値を削除する
+      def del
+        @connection.del(@cache_key)
+      end
+
+      # Redisにキャッシュされているかどうかを判定する
+      def cache?
+        get.present?
+      end
+
+      # Redisに保存されている値を取得し、JSONをパースして返す
+      def array_with_sym
+        result = get
+        array = [&quot;[]&quot;, nil].include?(result) ? [] : result
+        return [] if array.blank?
+
+        JSON.parse(array, { symbolize_names: true })
+      end
+    end
+  end
+end
+</code></pre>
+<h2 id="railsコンソールからラッパークラスからredisに接続できることを確認"><a class="header" href="#railsコンソールからラッパークラスからredisに接続できることを確認">RailsコンソールからラッパークラスからRedisに接続できることを確認</a></h2>
+<pre><code class="language-bash">bin/rails c
+</code></pre>
+<p>Railsコンソールでコードを実行してみましょう。</p>
+<pre><code class="language-ruby">client = CmsRedis::Core::Client.new(&quot;test&quot;)
+client.set(&quot;test&quot;)
+#=&gt; true
+client.get
+# =&gt; &quot;\&quot;test\&quot;&quot;
+client.fetch
+#=&gt; &quot;test&quot;
+client.del
+#=&gt; 1
+client.fetch
+#=&gt; nil
+client.set([1])
+#=&gt; true
+client.fetch
+#=&gt; [1]
+</code></pre>
+<h2 id="インプレッション数クリック数のカウント方針"><a class="header" href="#インプレッション数クリック数のカウント方針">インプレッション数、クリック数のカウント方針</a></h2>
+<ul>
+<li>キャッシュキー<code>short-url:#{id}</code>を作成する</li>
+<li>キャッシュする値は、<code>[{:short_url_id=&gt;&quot;ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa&quot;, :tracking_type=&gt;&quot;imp&quot;, :created_at=&gt;1690700669}, {...}]</code>のような形式で保存する</li>
+<li>キャッシュするcreated_atは、<code>Time.now.to_i</code>で保存する</li>
+</ul>
+<h2 id="マイグレーション"><a class="header" href="#マイグレーション">マイグレーション</a></h2>
+<p>ターミナルで、以下のコマンドを実行します。</p>
+<pre><code class="language-bash">bin/rails g migration CreateTrackingType
+bin/rails g migration CreateShortUrlTrackings
+</code></pre>
+<p>以下のように編集します。</p>
+<ol>
+<li>Filename: <code>db/migrate/..._create_tracking_type.rb</code></li>
+</ol>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class CreateTrackingType &lt; ActiveRecord::Migration[7.0]
+  def up
+    create_enum :tracking_type, %w[imp click]
+  end
+
+  def down
+    # While there is a `create_enum` method, there is no way to drop it. You can
+    # how ever, use raw SQL to drop the enum type.
+    execute &lt;&lt;-SQL
+      DROP TYPE tracking_type;
+    SQL
+  end
+end
+</code></pre>
+<ol start="2">
+<li>Filename: <code>db/migrate/..._short_url_tracking.rb</code></li>
+</ol>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class CreateShortUrlTracking &lt; ActiveRecord::Migration[7.0]
+  def change
+    create_table :short_url_trackings, id: :uuid do |t|
+      t.references :short_url, foreign_key: true, deferrable: :deferred, type: :uuid, comment: &quot;ShortUrlテーブルの外部キー&quot;
+      t.enum :tracking_type, enum_type: :tracking_type, default: :imp, comment: &quot;追跡タイプ&quot;
+      t.datetime :created_at, null: false
+    end
+  end
+end
+</code></pre>
+<p>マイグレーションを実行します。</p>
+<pre><code class="language-bash">bin/rails db:migrate
+</code></pre>
+<h2 id="cmsredisshorturlを作成"><a class="header" href="#cmsredisshorturlを作成">CmsRedis::ShortUrlを作成</a></h2>
+<pre><code class="language-bash">touch lib/cms_redis/short_url.rb
+</code></pre>
+<p>以下のように編集します。</p>
+<p>Filename: <code>lib/cms_redis/short_url.rb</code></p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+module CmsRedis
+  class ShortUrl
+    EXPIRES = 60 * 60 * 24
+    CACHE_KEY = &quot;short-url&quot;
+
+    def initialize(cache_key = &quot;&quot;, expires = EXPIRES)
+      @cache_key = cache_key
+      @expires = expires
+      @connection = ::CmsRedis::Core::Client.new(@cache_key, @expires)
+    end
+
+    def fetch
+      @connection.fetch do
+        []
+      end
+    end
+
+    def cache?
+      @connection.cache?
+    end
+
+    def set(hash)
+      array = fetch
+      array &lt;&lt; hash
+      @connection.set(array)
+    end
+
+    def del
+      @connection.del
+    end
+  end
+end
+</code></pre>
+<h2 id="shorturltrackingモデルを作成"><a class="header" href="#shorturltrackingモデルを作成">ShortUrlTrackingモデルを作成</a></h2>
+<p>ShortUrlTrackingモデルを作成します。ターミナルで、以下のコマンドを実行します。</p>
+<pre><code class="language-bash">touch app/models/short_url_tracking.rb
+</code></pre>
+<p>以下のように編集します。</p>
+<p>Filename: <code>app/models/short_url_tracking.rb</code></p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class ShortUrlTracking &lt; ApplicationRecord
+  belongs_to :short_url
+
+  enum tracking_type: {
+    imp: &quot;imp&quot;,
+    click: &quot;click&quot;
+  }
+
+  scope :when_created_at, -&gt;(date) { where(created_at: date.beginning_of_day..date.end_of_day) }
+
+  # キャッシュに保存されている値を取得して、データベースに保存する
+  def self.import_all!
+    targets = ShortUrl.fetch_all_from_redis.map { |hash| hash_to_attribute(hash) }
+    result = import targets
+    ShortUrl.del_all_redis if result.ids.present?
+  end
+
+  # キャッシュに保存されている値から、インスタンスを作成する
+  def self.hash_to_attribute(hash)
+    new(
+      short_url_id: hash[:short_url_id],
+      tracking_type: hash[:tracking_type],
+      created_at: DateTime.strptime(hash[:created_at].to_s, &quot;%s&quot;)
+    )
+  end
+
+  # 今日作成されたデータを取得する
+  def self.created_today
+    when_created_at(Date.today)
+  end
+end
+</code></pre>
+<h2 id="shorturlモデルの修正"><a class="header" href="#shorturlモデルの修正">ShortUrlモデルの修正</a></h2>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class ShortUrl &lt; ApplicationRecord
+  belongs_to :admin
+  has_many :short_url_trackings
+
+  validates :label_name, length: { maximum: 255, too_long: &quot;最大%&lt;count&gt;s文字まで使えます&quot; }
+  validates :original_url, presence: true
+  validates :utm_source, presence: true, length: { maximum: 255, too_long: &quot;最大%&lt;count&gt;s文字まで使えます&quot; }
+  validates :utm_medium, presence: true, length: { maximum: 255, too_long: &quot;最大%&lt;count&gt;s文字まで使えます&quot; }
+  validates :utm_campaign, presence: true, length: { maximum: 255, too_long: &quot;最大%&lt;count&gt;s文字まで使えます&quot; }
+
+  before_create :fill_custom_key
+
+  IMP = &quot;imp&quot;
+  CLICK = &quot;click&quot;
+
+  def fill_custom_key
+    self.custom_key = loop do
+      uuid = SecureRandom.alphanumeric(10) # JWlXD6cCxM
+      break uuid unless self.class.exists?(custom_key: uuid)
+    end
+  end
+
+  def short_url
+    Rails.application.routes.url_helpers.short_url_url(
+      id: custom_key,
+      host: Rails.application.routes.default_url_options[:host],
+      protocol: Rails.application.routes.default_url_options[:protocol]
+    )
+  end
+
+  def parameter_url
+    query = {
+      utm_source: self&amp;.utm_source,
+      utm_medium: self&amp;.utm_medium,
+      utm_campaign: self&amp;.utm_campaign
+    }
+    uri = URI.parse(self&amp;.original_url)
+    uri.query = query.to_param
+    uri.to_s
+  end
+
+  # インプレッション数をカウントする
+  def imp!
+    tracking_to_redis!(tracking_type: IMP)
+  end
+
+  # クリック数をカウントする
+  def click!
+    tracking_to_redis!(tracking_type: CLICK)
+  end
+
+  # キャッシュキーを作成する
+  def tracking_cache_key
+    &quot;#{::CmsRedis::ShortUrl::CACHE_KEY}:#{id}&quot;
+  end
+
+  # Redisに接続する
+  def connect_redis
+    ::CmsRedis::ShortUrl.new(tracking_cache_key)
+  end
+
+  # Redisに保存する
+  def tracking_to_redis!(tracking_type: IMP)
+    hash = {
+      short_url_id: id,
+      tracking_type: tracking_type,
+      created_at: Time.current.to_i
+    }
+    connect_redis.set(hash)
+  end
+
+  # Redisから取得する
+  def fetch_from_redis
+    connect_redis.fetch
+  end
+
+  # Redisから全て取得する
+  def self.fetch_all_from_redis
+    all.map do |short_url|
+      short_url&amp;.fetch_from_redis
+    end.flatten
+  end
+
+  # Redisから削除する
+  def del_redis
+    connect_redis.del
+  end
+
+  # Redisから全て削除する
+  def self.del_all_redis
+    all.map do |del_redis|
+      del_redis&amp;.del_redis
+    end
+  end
+end
+</code></pre>
+<h2 id="shorturltrackingを使用してインプレッション数クリック数をカウントする"><a class="header" href="#shorturltrackingを使用してインプレッション数クリック数をカウントする">ShortUrlTrackingを使用して、インプレッション数、クリック数をカウントする</a></h2>
+<p>Railsコンソールを起動します。</p>
+<pre><code class="language-bash">bin/rails c
+</code></pre>
+<p>以下のコードを実行します。</p>
+<pre><code class="language-ruby">ShortUrl.last.imp!
+#=&gt; true
+ShortUrl.last.click!
+#=&gt; true
+ShortUrl.last.fetch_from_redis
+#=&gt; [{:short_url_id=&gt;&quot;ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa&quot;, :tracking_type=&gt;&quot;imp&quot;, :created_at=&gt;1690701910},
+#  {:short_url_id=&gt;&quot;ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa&quot;, :tracking_type=&gt;&quot;click&quot;, :created_at=&gt;1690701910}]
+</code></pre>
+<p><code>imp!</code>、<code>click!</code>メソッドを呼び出すと、Redisに保存され、<code>fetch_from_redis</code>メソッドを呼び出すと、Redisに保存されている値を取得できます。</p>
+<p>このメソッドをコントローラーで呼び出すことができれば、インプレッション数、クリック数をカウントすることができます。</p>
+<h2 id="ルーティングの設定"><a class="header" href="#ルーティングの設定">ルーティングの設定</a></h2>
+<p>インプレッション数、クリック数のカウントをするために、ルーティングを設定します。</p>
+<div class="table-wrapper"><table><thead><tr><th>パス</th><th>説明</th></tr></thead><tbody>
+<tr><td><code>/l/:id</code></td><td>確認画面、インプレッション数のカウント</td></tr>
+<tr><td><code>/l/:id/click</code></td><td>クリック数のカウント、リダイレクト</td></tr>
+</tbody></table>
+</div>
+<pre><code class="language-bash">touch config/routes/user/short_urls.rb
+</code></pre>
+<p>Filename: <code>config/routes/user/short_urls.rb</code></p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+Rails.application.routes.draw do
+  get &quot;/l/:id&quot; =&gt; &quot;user/short_urls#show&quot;, as: :short_url
+  get &quot;/l/:id/click&quot; =&gt; &quot;user/short_urls#click&quot;, as: :click_short_url
+end
+</code></pre>
+<p><code>bin/rails routes</code>でルーティングが設定されていることを確認します。</p>
+<pre><code class="language-bash">bin/rails routes -g short_url
+</code></pre>
+<p>以下が表示されればOKです。</p>
+<pre><code class="language-console">           short_url GET    /l/:id(.:format)                     user/short_urls#show
+     click_short_url GET    /l/:id/click(.:format)               user/short_urls#click
+</code></pre>
+<h2 id="shorturlコントローラー"><a class="header" href="#shorturlコントローラー">ShortUrlコントローラー</a></h2>
+<p>ユーザー側のコントローラーを作成します。</p>
+<pre><code class="language-bash">touch app/controllers/user/short_urls_controller.rb
+</code></pre>
+<p>以下のように編集します。</p>
+<p>Filename: <code>app/controllers/user/short_urls_controller.rb</code></p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class User::ShortUrlsController &lt; User::ApplicationController
+  def show
+    redirect_to root_url and return unless params[:id].present? &amp;&amp; params[:id] =~ Regexp.new(&quot;\\A[a-zA-Z0-9]{10}+\\z&quot;)
+
+    @short_url = ShortUrl.find_by(custom_key: params[:id])
+    redirect_to root_url and return unless @short_url.present?
+
+    # imp計測
+    @short_url&amp;.imp!
+  end
+
+  def click
+    redirect_to root_url and return unless params[:id].present? &amp;&amp; params[:id] =~ Regexp.new(&quot;\\A[a-zA-Z0-9]{10}+\\z&quot;)
+
+    @short_url = ShortUrl.find_by(custom_key: params[:id])
+    redirect_to root_url and return unless @short_url.present?
+
+    # click計測
+    @short_url&amp;.click!
+
+    # click後のリダイレクト
+    redirect_to @short_url&amp;.parameter_url, allow_other_host: true
+  end
+end
+</code></pre>
+<h2 id="確認画面を作成"><a class="header" href="#確認画面を作成">確認画面を作成</a></h2>
+<pre><code class="language-bash">mkdir -p app/views/user/short_urls &amp;&amp; touch app/views/user/short_urls/show.html.erb
+</code></pre>
+<p>以下のように編集します。</p>
+<p>Filename: <code>app/views/user/short_urls/show.html.erb</code></p>
+<pre><code class="language-erb">&lt;main id=&quot;kiji-main&quot;&gt;
+  &lt;div class=&quot;container max-width-980&quot;&gt;
+    &lt;div class=&quot;article-main&quot;&gt;
+      &lt;div class=&quot;article-main-content&quot;&gt;
+        外部のサイトに移動します。
+        &lt;div class=&quot;article-main-content mt-3&quot;&gt;
+          &lt;%= @short_url&amp;.parameter_url %&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;article-main-content mt-3&quot;&gt;
+          &lt;%= link_to click_short_url_path(id: params[:id]), target: &quot;_blank&quot;, class: &quot;btn&quot; do %&gt;
+            外部サイトに移動する
+          &lt;% end %&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;footer-breadcrumb&quot;&gt;
+      &lt;ul class=&quot;breadcrumb&quot;&gt;
+        &lt;li&gt;
+          &lt;%= link_to user_top_path do %&gt;
+            トップ
+          &lt;% end %&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+<h2 id="ブラウザで確認してみます"><a class="header" href="#ブラウザで確認してみます">ブラウザで確認してみます</a></h2>
+<pre><code class="language-bash">bin/rails s
+</code></pre>
+<p>別ターミナルで、<code>entrypoint.local.sh</code>を実行します。</p>
+<pre><code class="language-bash">sh entrypoint.local.sh
+</code></pre>
+<p>eg) http://localhost:3000/l/e09i1Zxhye</p>
+<p>※管理画面&gt;短縮URL一覧&gt;該当の短縮URL&gt;<code>短縮URL</code>の値をコピー(短縮URLを作成していなければ、作成してください。)</p>
+<p>以下のような画面になればOKです。</p>
+<p><img src="./images/short_url_1.png" alt="img" /></p>
+<h2 id="再度railsコンソールで確認"><a class="header" href="#再度railsコンソールで確認">再度Railsコンソールで確認</a></h2>
+<p>Railsコンソールを起動します。</p>
+<pre><code class="language-bash">bin/rails c
+</code></pre>
+<p>ブラウザで確認した短縮URLのインプレッション数、クリック数がカウントされていることを確認します。</p>
+<pre><code class="language-ruby">short_url = ShortUrl.find_by_custom_key(&quot;e09i1Zxhye&quot;) # 自分の環境の値に変更してください
+short_url.fetch_from_redis
+#=&gt; [{:short_url_id=&gt;&quot;ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa&quot;, :tracking_type=&gt;&quot;imp&quot;, :created_at=&gt;1690701910},
+#  {:short_url_id=&gt;&quot;ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa&quot;, :tracking_type=&gt;&quot;click&quot;, :created_at=&gt;1690701910},
+#  {:short_url_id=&gt;&quot;ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa&quot;, :tracking_type=&gt;&quot;imp&quot;, :created_at=&gt;1690702930}]
+</code></pre>
+<h2 id="バッチ処理に必要なコードを実装"><a class="header" href="#バッチ処理に必要なコードを実装">バッチ処理に必要なコードを実装</a></h2>
+<p>※バッチ処理の設定は行いません</p>
+<pre><code class="language-bash">touch lib/tasks/short_url.rake
+</code></pre>
+<p>以下のように編集します。</p>
+<p>Filename: <code>lib/tasks/short_url.rake</code></p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+namespace :short_url do
+  desc &quot;Insert short_url_tracking data from redis cache&quot;
+  task insert: :environment do |task|
+    start_message = &quot;#### START: #{task&amp;.name}. ####&quot;
+    puts start_message
+    Rails.logger.info start_message
+
+    # インプレッション数、クリック数をRedisからデータベースに保存する
+    ShortUrlTracking.import_all!
+
+    end_message = &quot;#### END: #{task&amp;.name}. ####&quot;
+    puts end_message
+    Rails.logger.info end_message
+  end
+end
+</code></pre>
+<p>ターミナルを開き、コードを実行します。</p>
+<pre><code class="language-bash">bin/rails short_url:insert
+#### START: short_url:insert. ####
+#### END: short_url:insert. ####
+</code></pre>
+<p>データベースを見ると、保存されていることが確認できます。</p>
+<pre><code class="language-bash">bin/rails c
+
+&gt; ShortUrlTracking.all
+# =&gt;   ShortUrlTracking Load (0.5ms)  SELECT &quot;short_url_trackings&quot;.* FROM &quot;short_url_trackings&quot;
+# [#&lt;ShortUrlTracking:0x0000ffffb04eda30
+#   id: &quot;538c894f-45d7-46f9-9923-ab3922d98c53&quot;,
+#   short_url_id: &quot;ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa&quot;,
+#   tracking_type: &quot;imp&quot;,
+#   created_at: Sun, 30 Jul 2023 16:25:10.000000000 JST +09:00&gt;,
+#  #&lt;ShortUrlTracking:0x0000ffffb04dbc68
+#   id: &quot;4f2512c2-cd8a-4fda-b943-00f15b33cadf&quot;,
+#   short_url_id: &quot;ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa&quot;,
+#   tracking_type: &quot;click&quot;,
+#   created_at: Sun, 30 Jul 2023 16:25:10.000000000 JST +09:00&gt;,
+#  #&lt;ShortUrlTracking:0x0000ffffb04dbba0
+#   id: &quot;f841365e-f2f4-43e9-aa03-8cf7bfb85395&quot;,
+#   short_url_id: &quot;ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa&quot;,
+#   tracking_type: &quot;imp&quot;,
+#   created_at: Sun, 30 Jul 2023 16:42:10.000000000 JST +09:00&gt;,
+#  #&lt;ShortUrlTracking:0x0000ffffb04dbad8
+#   id: &quot;612767db-bc17-420c-a64e-cdc4fa9dd827&quot;,
+#   short_url_id: &quot;ae8c2bec-9f69-4de2-bdfb-7dbf453ed3aa&quot;,
+#   tracking_type: &quot;imp&quot;,
+#   created_at: Sun, 30 Jul 2023 16:42:15.000000000 JST +09:00&gt;]
+</code></pre>
+<p>あとはバッチ処理を設定すれば、定期的にデータベースに保存されます。
+※今回は、バッチ処理の設定は行いません</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../day-3/short-url.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../appendix/welcome.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../day-3/short-url.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../appendix/welcome.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+        <script>
+            window.playground_line_numbers = true;
+        </script>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js"></script>
+        <script src="../editor.js"></script>
+        <script src="../mode-rust.js"></script>
+        <script src="../theme-dawn.js"></script>
+        <script src="../theme-tomorrow_night.js"></script>
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../mermaid.min.js"></script>
+        <script src="../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day1 ハンズオン - 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="会員制メディア&amp;CMS開発による実践的アプローチ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../welcome.html">Welcome to 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</a></li><li class="chapter-item expanded "><a href="../running-the-course.html"><strong aria-hidden="true">1.</strong> 本講座について</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../running-the-course/course-structure.html"><strong aria-hidden="true">1.1.</strong> 講座</a></li><li class="chapter-item expanded "><a href="../running-the-course/course-building.html"><strong aria-hidden="true">1.2.</strong> 事前準備</a></li><li class="chapter-item expanded "><a href="../running-the-course/demo-day.html"><strong aria-hidden="true">1.3.</strong> Demo Day</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day 0: Ruby基礎</li><li class="chapter-item expanded "><a href="../day-0/what-is-ruby.html"><strong aria-hidden="true">2.</strong> Rubyとは</a></li><li class="chapter-item expanded "><a href="../day-0/exercise/welcome.html"><strong aria-hidden="true">3.</strong> Exercise</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/exercise/exercise-janken.html"><strong aria-hidden="true">3.1.</strong> Exercise - じゃんけんプログラム</a></li><li class="chapter-item expanded "><a href="../day-0/exercise/exercise-vending-machine.html"><strong aria-hidden="true">3.2.</strong> Exercise - 自動販売機プログラム</a></li></ol></li><li class="chapter-item expanded "><a href="../day-0/appendix/welcome.html"><strong aria-hidden="true">4.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/appendix/program.html"><strong aria-hidden="true">4.1.</strong> プログラム・文・式</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/variables.html"><strong aria-hidden="true">4.2.</strong> 変数と定数</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/literal.html"><strong aria-hidden="true">4.3.</strong> リテラル</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/operator.html"><strong aria-hidden="true">4.4.</strong> 演算子式</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/control.html"><strong aria-hidden="true">4.5.</strong> 制御構文</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/call.html"><strong aria-hidden="true">4.6.</strong> メソッド呼び出し(super・ブロック付き・yield)</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/def.html"><strong aria-hidden="true">4.7.</strong> クラス/メソッドの定義</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/flexical.html"><strong aria-hidden="true">4.8.</strong> 字句構造</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day 0: Ruby on Rails基礎</li><li class="chapter-item expanded "><a href="../day-0/what-is-ruby-on-rails.html"><strong aria-hidden="true">5.</strong> Ruby on Railsとは?</a></li><li class="chapter-item expanded "><a href="../day-0/how-to-setup.html"><strong aria-hidden="true">6.</strong> Ruby on Railsの環境構築</a></li><li class="chapter-item expanded "><a href="../day-0/web-development-overview.html"><strong aria-hidden="true">7.</strong> Ruby on Railsを用いたWeb開発の全体像</a></li><li class="chapter-item expanded affix "><li class="part-title">Day0: 事前学習</li><li class="chapter-item expanded "><a href="../day-0/goal.html"><strong aria-hidden="true">8.</strong> 本講義プロジェクトMyCMSのER図</a></li><li class="chapter-item expanded "><a href="../day-0/cms-sample.html"><strong aria-hidden="true">9.</strong> 記事管理機能⓪：サンプル</a></li><li class="chapter-item expanded affix "><li class="part-title">Day0 課題(Day1に向けた課題):</li><li class="chapter-item expanded "><a href="../day-0/cms-tag.html"><strong aria-hidden="true">10.</strong> 記事管理機能①：タグ管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/cms-tag-index.html"><strong aria-hidden="true">10.1.</strong> 一覧画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-show.html"><strong aria-hidden="true">10.2.</strong> 詳細画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-edit.html"><strong aria-hidden="true">10.3.</strong> 編集画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-new.html"><strong aria-hidden="true">10.4.</strong> 作成画面</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day1 講義:</li><li class="chapter-item expanded "><a href="../day-1/lecture.html"><strong aria-hidden="true">11.</strong> Day1 講義用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-1/handson.html" class="active"><strong aria-hidden="true">11.1.</strong> Day1 ハンズオン</a></li></ol></li><li class="chapter-item expanded "><a href="../day-1/theme.html"><strong aria-hidden="true">12.</strong> Day2に向けた課題</a></li><li class="chapter-item expanded affix "><li class="part-title">Day2 講義:</li><li class="chapter-item expanded "><a href="../day-2/day-1-qa.html"><strong aria-hidden="true">13.</strong> Day1 QA</a></li><li class="chapter-item expanded "><a href="../day-2/lecture.html"><strong aria-hidden="true">14.</strong> Day2 講義用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-2/handson.html"><strong aria-hidden="true">14.1.</strong> Day2 ハンズオン</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-2/handson-auth-registration.html"><strong aria-hidden="true">14.1.1.</strong> 認証機能: 新規登録</a></li><li class="chapter-item expanded "><a href="../day-2/handson-auth-session.html"><strong aria-hidden="true">14.1.2.</strong> 認証機能: ログイン</a></li><li class="chapter-item expanded "><a href="../day-2/handson-payment.html"><strong aria-hidden="true">14.1.3.</strong> 決済機能</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../day-2/theme.html"><strong aria-hidden="true">15.</strong> Day3に向けた課題</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Day3 講義:</li><li class="chapter-item expanded "><a href="../day-3/welcome.html"><strong aria-hidden="true">16.</strong> Day3用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-3/short-url.html"><strong aria-hidden="true">16.1.</strong> Day3: 短縮URL管理画面</a></li><li class="chapter-item expanded "><a href="../day-3/short-url-tracking.html"><strong aria-hidden="true">16.2.</strong> Day3: 短縮URLトラッキング機能</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../appendix/welcome.html"><strong aria-hidden="true">17.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../appendix/mvc-r.html"><strong aria-hidden="true">17.1.</strong> MVCとルーティング</a></li><li class="chapter-item expanded "><a href="../appendix/routing.html"><strong aria-hidden="true">17.2.</strong> ルーティングについて</a></li><li class="chapter-item expanded "><a href="../appendix/database-design.html"><strong aria-hidden="true">17.3.</strong> データベース構造と設計</a></li><li class="chapter-item expanded "><a href="../appendix/database-migration.html"><strong aria-hidden="true">17.4.</strong> マイグレーション</a></li><li class="chapter-item expanded "><a href="../appendix/active-record.html"><strong aria-hidden="true">17.5.</strong> ActiveRecordについて</a></li><li class="chapter-item expanded "><a href="../appendix/controller.html"><strong aria-hidden="true">17.6.</strong> Controllerにまつわる処理ついて</a></li><li class="chapter-item expanded "><a href="../appendix/rails-dev-command.html"><strong aria-hidden="true">17.7.</strong> Railsでよく使われるコマンド</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day1-ハンズオン"><a class="header" href="#day1-ハンズオン">Day1 ハンズオン</a></h1>
+<p>Day1のハンズオンページです。</p>
+<h2 id="目次"><a class="header" href="#目次">目次</a></h2>
+<ul>
+<li>ハンズオンの準備</li>
+<li>ハンズオンの前に
+<ul>
+<li>Web開発の全体像</li>
+<li>MVCとルーティングについて</li>
+<li>データベースについて</li>
+</ul>
+</li>
+<li>ハンズオン
+<ul>
+<li>Day0の振り返り</li>
+<li>Day1で使用するソースコードの共有</li>
+<li>User側の記事詳細画面を実装する</li>
+</ul>
+</li>
+<li>Day2に向けて
+<ul>
+<li>Rails開発でよく使うファイル場所やコマンド</li>
+<li>課題について</li>
+</ul>
+</li>
+</ul>
+<h2 id="ハンズオンの準備"><a class="header" href="#ハンズオンの準備">ハンズオンの準備</a></h2>
+<h3 id="git-pull"><a class="header" href="#git-pull">git pull</a></h3>
+<p>Day1は、<code>lesson-day-1</code>ブランチを使用します。お使いの環境にソースコードを取り込んでください。</p>
+<p>[command]</p>
+<p>作業中の場合は、一旦コミットするか、stashしてからpullしてください。</p>
+<pre><code class="language-console">git pull origin lesson-day-1
+</code></pre>
+<h3 id="git-commitが必要な場合"><a class="header" href="#git-commitが必要な場合">git commitが必要な場合</a></h3>
+<p>[command]</p>
+<pre><code class="language-console">git add -p
+git commit -m &quot;commit message&quot;
+</code></pre>
+<h3 id="git-stashが必要な場合"><a class="header" href="#git-stashが必要な場合">git stashが必要な場合</a></h3>
+<p>[command]</p>
+<pre><code class="language-consoe">git stash
+</code></pre>
+<p>※ VSCode Remote Containerに接続前提で進みます。</p>
+<h3 id="データベースの再作成"><a class="header" href="#データベースの再作成">データベースの再作成</a></h3>
+<p>[command]</p>
+<p>db/migrate以下のファイルを追加しましたので、データベースを再作成してください。</p>
+<pre><code class="language-console">bin/rails db:reset
+</code></pre>
+<p><code>bin/rails db:reset</code>は、以下のコマンドをまとめて実行しています。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">コマンド</th><th style="text-align: left">内容</th></tr></thead><tbody>
+<tr><td style="text-align: left">bin/rails db:drop</td><td style="text-align: left">データベースのドロップ</td></tr>
+<tr><td style="text-align: left">bin/rails db:create</td><td style="text-align: left">データベースの作成</td></tr>
+<tr><td style="text-align: left">bin/rails db:schema:load</td><td style="text-align: left">スキーマのロード</td></tr>
+<tr><td style="text-align: left">bin/rails db:seed</td><td style="text-align: left">シードデータのロード。db/seeds.rbに記述されたコードが実行され、データベースに初期データが投入される</td></tr>
+</tbody></table>
+</div>
+<h3 id="動作確認"><a class="header" href="#動作確認">動作確認</a></h3>
+<p>[command]</p>
+<p>ターミナルで以下のコマンドを実行し、Railsサーバーを起動してください。</p>
+<pre><code class="language-console">bin/rails s
+</code></pre>
+<p>もう一つターミナルを開き、以下のコマンドを実行してください。</p>
+<pre><code class="language-console">sh entrypoint.local.sh
+</code></pre>
+<p>[output]</p>
+<p>ブラウザで以下のURLにアクセスしてください。</p>
+<p><a href="http://localhost:3000/admin">http://localhost:3000/admin</a></p>
+<h2 id="ハンズオンの前に"><a class="header" href="#ハンズオンの前に">ハンズオンの前に</a></h2>
+<h3 id="web開発の全体像"><a class="header" href="#web開発の全体像">Web開発の全体像</a></h3>
+<p><a href="../day-0/web-development-overview.html">Ruby on Railsを用いたWeb開発の全体像</a>のページを参照ください。</p>
+<h3 id="mvcとルーティングについて"><a class="header" href="#mvcとルーティングについて">MVCとルーティングについて</a></h3>
+<ul>
+<li><a href="../appendix/mvc-r.html">MVCとルーティング</a></li>
+<li><a href="../appendix/routing.html">ルーティングについて</a></li>
+</ul>
+<h3 id="データベースについて"><a class="header" href="#データベースについて">データベースについて</a></h3>
+<ul>
+<li><a href="../appendix/database-design.html">データベース構造と設計</a></li>
+<li><a href="../day-0/goal.html">MyCMSのER図</a></li>
+</ul>
+<h2 id="ハンズオン"><a class="header" href="#ハンズオン">ハンズオン</a></h2>
+<h3 id="day0の振り返り"><a class="header" href="#day0の振り返り">Day0の振り返り</a></h3>
+<p><a href="../day-0/cms-tag.html">タグ管理</a>のページを使用する</p>
+<h3 id="day1で使用するソースコードの共有"><a class="header" href="#day1で使用するソースコードの共有">Day1で使用するソースコードの共有</a></h3>
+<p>lesson-day-1ブランチの内容は、以下の通りです。</p>
+<h4 id="admin側"><a class="header" href="#admin側">Admin側</a></h4>
+<ul>
+<li>記事管理機能
+<ul>
+<li>記事一覧ページ</li>
+<li>記事詳細ページ</li>
+<li>記事作成ページ</li>
+<li>記事編集ページ</li>
+</ul>
+</li>
+<li>著者管理機能
+<ul>
+<li>著者一覧ページ</li>
+<li>著者詳細ページ</li>
+<li>著者作成ページ</li>
+<li>著者編集ページ</li>
+</ul>
+</li>
+<li>連載管理機能
+<ul>
+<li>連載一覧ページ</li>
+<li>連載詳細ページ</li>
+<li>連載作成ページ</li>
+<li>連載編集ページ</li>
+</ul>
+</li>
+<li>カテゴリ管理機能
+<ul>
+<li>カテゴリ一覧ページ</li>
+<li>カテゴリ詳細ページ</li>
+<li>カテゴリ作成ページ</li>
+<li>カテゴリ編集ページ</li>
+</ul>
+</li>
+<li>タグ管理機能
+<ul>
+<li>タグ一覧ページ</li>
+<li>タグ詳細ページ</li>
+<li>タグ作成ページ</li>
+<li>タグ編集ページ</li>
+</ul>
+</li>
+<li>イチオシ管理機能
+<ul>
+<li>イチオシ一覧ページ</li>
+<li>イチオシ詳細ページ</li>
+<li>イチオシ作成ページ</li>
+<li>イチオシ編集ページ</li>
+</ul>
+</li>
+<li>バナー管理機能
+<ul>
+<li>バナー一覧ページ</li>
+<li>バナー詳細ページ</li>
+<li>バナー作成ページ</li>
+<li>バナー編集ページ</li>
+</ul>
+</li>
+</ul>
+<h4 id="user側"><a class="header" href="#user側">User側</a></h4>
+<ul>
+<li>トップページ</li>
+<li>カテゴリ詳細ページ</li>
+<li>連載一覧ページ</li>
+<li>連載詳細ページ</li>
+</ul>
+<h3 id="user側の記事詳細画面を実装する"><a class="header" href="#user側の記事詳細画面を実装する">User側の記事詳細画面を実装する</a></h3>
+<p>まずは、User側の記事詳細に使用するコントローラーを実装します。</p>
+<p>[command]</p>
+<pre><code class="language-bash">touch app/controllers/user/articles_controller.rb
+</code></pre>
+<p>[code]</p>
+<p>Filename: app/controllers/user/articles_controller.rb</p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class User::ArticlesController &lt; User::ApplicationController
+  def show
+    @article = Article.preload(:author).find(params[:id])
+
+    render &quot;/user/error_404&quot; and return unless @article.present?
+  end
+end
+</code></pre>
+<p>次に、User側の記事詳細に使用するビューを実装します。</p>
+<p>[command]</p>
+<pre><code class="language-bash">mkdir -p app/views/user/articles &amp;&amp; touch app/views/user/articles/show.html.erb
+</code></pre>
+<p>[code]</p>
+<p>Filename: app/views/user/articles/show.html.erb</p>
+<pre><code class="language-erb">&lt;main id=&quot;kiji-main&quot;&gt;
+  &lt;div class=&quot;container max-width-980&quot;&gt;
+    &lt;div class=&quot;article-main&quot;&gt;
+      &lt;h1&gt;&lt;%= @article&amp;.title %&gt;&lt;/h1&gt;
+      &lt;div class=&quot;article-main-author&quot;&gt;
+        &lt;div class=&quot;article-main-author-img flex-center&quot;&gt;
+          &lt;div class=&quot;flex-center&quot;&gt;
+            &lt;%= @article&amp;.author&amp;.name[0] %&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;article-main-author-box&quot;&gt;
+          &lt;div class=&quot;article-main-author-box-name&quot;&gt;
+            &lt;%= @article&amp;.author&amp;.name %&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;article-main-author-box-note&quot;&gt;
+            &lt;time datetime=&quot;&lt;%= @article&amp;.published_at %&gt;&quot;&gt;
+              &lt;%= l(@article&amp;.published_at, format: :article_show) if @article&amp;.published_at.present? %&gt;
+            &lt;/time&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;article-main-thumbnail&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;article-main-content mt-3&quot;&gt;
+        &lt;%= @article&amp;.content %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;footer-breadcrumb&quot;&gt;
+      &lt;ul class=&quot;breadcrumb&quot;&gt;
+        &lt;li&gt;
+          &lt;%= link_to user_top_path do %&gt;
+            &lt;%= t &quot;.breadcrumb.top&quot; %&gt;
+          &lt;% end %&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;%= link_to article_path(id: @article[:id]) do %&gt;
+            &lt;%= @article&amp;.title %&gt;
+          &lt;% end %&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+<h3 id="管理画面から記事を作成する"><a class="header" href="#管理画面から記事を作成する">管理画面から記事を作成する</a></h3>
+<p>管理画面に移動して記事を作成してみます。</p>
+<h2 id="day2に向けて"><a class="header" href="#day2に向けて">Day2に向けて</a></h2>
+<h3 id="rails開発でよく使うファイル場所やコマンド"><a class="header" href="#rails開発でよく使うファイル場所やコマンド">Rails開発でよく使うファイル場所やコマンド</a></h3>
+<h3 id="gemfile"><a class="header" href="#gemfile">Gemfile</a></h3>
+<p>Gemとは、Rubyで使えるライブラリのことです。Railsでは、GemfileにGemを記述することで、Gemを使用することができます。</p>
+<p>RailsはGemのエコシステムが充実しているため、Gemを使用することで、簡単に機能を追加することができると言われています。</p>
+<p>Filename: Gemfile</p>
+<h4 id="よく使うコマンド集"><a class="header" href="#よく使うコマンド集">よく使うコマンド集</a></h4>
+<ul>
+<li><a href="../appendix/rails-dev-command.html">Rails開発でよく使うコマンド</a></li>
+</ul>
+<h4 id="cssを変更したい場合"><a class="header" href="#cssを変更したい場合">CSSを変更したい場合</a></h4>
+<p>※今回CSSにふれませんが、以下にCSSのファイルが置かれています。</p>
+<p>Directory: app/assets/stylesheets</p>
+<h4 id="javascriptを変更したい場合"><a class="header" href="#javascriptを変更したい場合">JavaScriptを変更したい場合</a></h4>
+<p>※今回JavaScriptに触れませんが、以下にJavaScriptのファイルが置かれています。</p>
+<p>Directory: app/javascript</p>
+<h4 id="bindingpry"><a class="header" href="#bindingpry">binding.pry</a></h4>
+<p>デバックする際に役に立つ機能を紹介します。画面にアクセスした時に、どんな値が入っているかを確認したい場合など使用します。</p>
+<p>[code]</p>
+<p><code>Admin::TagsController#index</code>に<code>binding.pry</code>を追加します。</p>
+<p>Filename: app/controllers/admin/tags_controller.rb</p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class Admin::TagsController &lt; Admin::ApplicationController
+  def index
+    @tags = Tag.all
+    binding.pry
+  end
+end
+</code></pre>
+<p>[output]</p>
+<p>画面にアクセスすると、Railsサーバーのコンソールを見ると、<code>binding.pry</code>を追加した箇所で処理が止まっています。</p>
+<pre><code class="language-bash">From: /workspace/app/controllers/admin/tags_controller.rb:6 Admin::TagsController#index:
+
+    4: def index
+    5:   @tags = Tag.all
+ =&gt; 6:   binding.pry
+    7: end
+</code></pre>
+<p>[command]</p>
+<p>以下を実行すると、<code>@tags</code>に入っている値を確認することができます。</p>
+<pre><code class="language-bash">@tags
+</code></pre>
+<p>[output]</p>
+<pre><code class="language-bash">[1] pry(#&lt;Admin::TagsController&gt;)&gt; @tags
+=&gt;   Tag Load (2.7ms)  SELECT &quot;tags&quot;.* FROM &quot;tags&quot;
+  ↳ app/controllers/admin/tags_controller.rb:6:in `index'
+[#&lt;Tag:0x0000ffff7b0f0d40
+  id: &quot;0fdd7c38-8f11-4965-b872-6ac55e437012&quot;,
+  name: &quot;ポエム&quot;,
+  created_at: Sun, 09 Jul 2023 01:24:47.937235000 JST +09:00,
+  updated_at: Sun, 09 Jul 2023 01:24:47.937235000 JST +09:00&gt;,
+ #&lt;Tag:0x0000ffff7b0f0c50
+  id: &quot;0e431892-e797-4649-a596-be21b21374ce&quot;,
+  name: &quot;非認知能力&quot;,
+  created_at: Sun, 09 Jul 2023 01:24:47.942586000 JST +09:00,
+  updated_at: Sun, 09 Jul 2023 01:24:47.942586000 JST +09:00&gt;]
+[2] pry(#&lt;Admin::TagsController&gt;)&gt; 
+</code></pre>
+<h4 id="binrails-c"><a class="header" href="#binrails-c">bin/rails c</a></h4>
+<p>実際にRailsコンソールを起動しながら、コードを実行してみます。</p>
+<h4 id="binrails-routes"><a class="header" href="#binrails-routes">bin/rails routes</a></h4>
+<p>実際にルーティングを確認しましょう。</p>
+<h3 id="課題"><a class="header" href="#課題">課題</a></h3>
+<p>実際に自分で手を動かしてみるのが一番身につきますので、以下の課題をやってみましょう。</p>
+<ul>
+<li>
+<p>サンプルで用意したソースコードの復習</p>
+<ul>
+<li>不具合があれば皆さんに共有お願いします！そして修正してみてください！</li>
+</ul>
+</li>
+<li>
+<p>Day3に向けて実装したい機能を考えてみましょう。余裕があれば実装してください！</p>
+<ul>
+<li>フロントエンドの実装でも良いですし、</li>
+<li>サーバーサイドの実装でも良いです</li>
+<li>実装の方針が分からなければ、ぜひ聞いてください！</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../day-1/lecture.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../day-1/theme.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../day-1/lecture.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../day-1/theme.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+        <script>
+            window.playground_line_numbers = true;
+        </script>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js"></script>
+        <script src="../editor.js"></script>
+        <script src="../mode-rust.js"></script>
+        <script src="../theme-dawn.js"></script>
+        <script src="../theme-tomorrow_night.js"></script>
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../mermaid.min.js"></script>
+        <script src="../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

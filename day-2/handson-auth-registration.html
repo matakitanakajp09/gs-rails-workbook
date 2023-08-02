@@ -1,0 +1,516 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>認証機能: 新規登録 - 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="会員制メディア&amp;CMS開発による実践的アプローチ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../welcome.html">Welcome to 爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</a></li><li class="chapter-item expanded "><a href="../running-the-course.html"><strong aria-hidden="true">1.</strong> 本講座について</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../running-the-course/course-structure.html"><strong aria-hidden="true">1.1.</strong> 講座</a></li><li class="chapter-item expanded "><a href="../running-the-course/course-building.html"><strong aria-hidden="true">1.2.</strong> 事前準備</a></li><li class="chapter-item expanded "><a href="../running-the-course/demo-day.html"><strong aria-hidden="true">1.3.</strong> Demo Day</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day 0: Ruby基礎</li><li class="chapter-item expanded "><a href="../day-0/what-is-ruby.html"><strong aria-hidden="true">2.</strong> Rubyとは</a></li><li class="chapter-item expanded "><a href="../day-0/exercise/welcome.html"><strong aria-hidden="true">3.</strong> Exercise</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/exercise/exercise-janken.html"><strong aria-hidden="true">3.1.</strong> Exercise - じゃんけんプログラム</a></li><li class="chapter-item expanded "><a href="../day-0/exercise/exercise-vending-machine.html"><strong aria-hidden="true">3.2.</strong> Exercise - 自動販売機プログラム</a></li></ol></li><li class="chapter-item expanded "><a href="../day-0/appendix/welcome.html"><strong aria-hidden="true">4.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/appendix/program.html"><strong aria-hidden="true">4.1.</strong> プログラム・文・式</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/variables.html"><strong aria-hidden="true">4.2.</strong> 変数と定数</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/literal.html"><strong aria-hidden="true">4.3.</strong> リテラル</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/operator.html"><strong aria-hidden="true">4.4.</strong> 演算子式</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/control.html"><strong aria-hidden="true">4.5.</strong> 制御構文</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/call.html"><strong aria-hidden="true">4.6.</strong> メソッド呼び出し(super・ブロック付き・yield)</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/def.html"><strong aria-hidden="true">4.7.</strong> クラス/メソッドの定義</a></li><li class="chapter-item expanded "><a href="../day-0/appendix/flexical.html"><strong aria-hidden="true">4.8.</strong> 字句構造</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day 0: Ruby on Rails基礎</li><li class="chapter-item expanded "><a href="../day-0/what-is-ruby-on-rails.html"><strong aria-hidden="true">5.</strong> Ruby on Railsとは?</a></li><li class="chapter-item expanded "><a href="../day-0/how-to-setup.html"><strong aria-hidden="true">6.</strong> Ruby on Railsの環境構築</a></li><li class="chapter-item expanded "><a href="../day-0/web-development-overview.html"><strong aria-hidden="true">7.</strong> Ruby on Railsを用いたWeb開発の全体像</a></li><li class="chapter-item expanded affix "><li class="part-title">Day0: 事前学習</li><li class="chapter-item expanded "><a href="../day-0/goal.html"><strong aria-hidden="true">8.</strong> 本講義プロジェクトMyCMSのER図</a></li><li class="chapter-item expanded "><a href="../day-0/cms-sample.html"><strong aria-hidden="true">9.</strong> 記事管理機能⓪：サンプル</a></li><li class="chapter-item expanded affix "><li class="part-title">Day0 課題(Day1に向けた課題):</li><li class="chapter-item expanded "><a href="../day-0/cms-tag.html"><strong aria-hidden="true">10.</strong> 記事管理機能①：タグ管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-0/cms-tag-index.html"><strong aria-hidden="true">10.1.</strong> 一覧画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-show.html"><strong aria-hidden="true">10.2.</strong> 詳細画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-edit.html"><strong aria-hidden="true">10.3.</strong> 編集画面</a></li><li class="chapter-item expanded "><a href="../day-0/cms-tag-new.html"><strong aria-hidden="true">10.4.</strong> 作成画面</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Day1 講義:</li><li class="chapter-item expanded "><a href="../day-1/lecture.html"><strong aria-hidden="true">11.</strong> Day1 講義用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-1/handson.html"><strong aria-hidden="true">11.1.</strong> Day1 ハンズオン</a></li></ol></li><li class="chapter-item expanded "><a href="../day-1/theme.html"><strong aria-hidden="true">12.</strong> Day2に向けた課題</a></li><li class="chapter-item expanded affix "><li class="part-title">Day2 講義:</li><li class="chapter-item expanded "><a href="../day-2/day-1-qa.html"><strong aria-hidden="true">13.</strong> Day1 QA</a></li><li class="chapter-item expanded "><a href="../day-2/lecture.html"><strong aria-hidden="true">14.</strong> Day2 講義用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-2/handson.html"><strong aria-hidden="true">14.1.</strong> Day2 ハンズオン</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-2/handson-auth-registration.html" class="active"><strong aria-hidden="true">14.1.1.</strong> 認証機能: 新規登録</a></li><li class="chapter-item expanded "><a href="../day-2/handson-auth-session.html"><strong aria-hidden="true">14.1.2.</strong> 認証機能: ログイン</a></li><li class="chapter-item expanded "><a href="../day-2/handson-payment.html"><strong aria-hidden="true">14.1.3.</strong> 決済機能</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../day-2/theme.html"><strong aria-hidden="true">15.</strong> Day3に向けた課題</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Day3 講義:</li><li class="chapter-item expanded "><a href="../day-3/welcome.html"><strong aria-hidden="true">16.</strong> Day3用ページ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../day-3/short-url.html"><strong aria-hidden="true">16.1.</strong> Day3: 短縮URL管理画面</a></li><li class="chapter-item expanded "><a href="../day-3/short-url-tracking.html"><strong aria-hidden="true">16.2.</strong> Day3: 短縮URLトラッキング機能</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../appendix/welcome.html"><strong aria-hidden="true">17.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../appendix/mvc-r.html"><strong aria-hidden="true">17.1.</strong> MVCとルーティング</a></li><li class="chapter-item expanded "><a href="../appendix/routing.html"><strong aria-hidden="true">17.2.</strong> ルーティングについて</a></li><li class="chapter-item expanded "><a href="../appendix/database-design.html"><strong aria-hidden="true">17.3.</strong> データベース構造と設計</a></li><li class="chapter-item expanded "><a href="../appendix/database-migration.html"><strong aria-hidden="true">17.4.</strong> マイグレーション</a></li><li class="chapter-item expanded "><a href="../appendix/active-record.html"><strong aria-hidden="true">17.5.</strong> ActiveRecordについて</a></li><li class="chapter-item expanded "><a href="../appendix/controller.html"><strong aria-hidden="true">17.6.</strong> Controllerにまつわる処理ついて</a></li><li class="chapter-item expanded "><a href="../appendix/rails-dev-command.html"><strong aria-hidden="true">17.7.</strong> Railsでよく使われるコマンド</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">爆速で身に着けるRuby on Rails：自分だけのCMSを開発しよう！</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="認証機能-新規登録"><a class="header" href="#認証機能-新規登録">認証機能: 新規登録</a></h1>
+<p>管理者アカウントの新規登録機能を実装します。</p>
+<blockquote>
+<p><a href="https://github.com/heartcombo/devise/blob/main/app/controllers/devise/registrations_controller.rb">Devise RegistrationsController</a></p>
+</blockquote>
+<h2 id="新規登録の流れ"><a class="header" href="#新規登録の流れ">新規登録の流れ</a></h2>
+<ol>
+<li>管理者アカウントの新規登録画面でメールアドレスを入力して送信</li>
+<li>メールアドレスが登録済みかどうかを確認し、メールアドレスを認証するためのリンクが添付されたメールを送信</li>
+<li>認証リンクをクリックし、管理者アカウント情報を入力して登録完了</li>
+<li>ログインする</li>
+</ol>
+<h2 id="ルーティングの設定"><a class="header" href="#ルーティングの設定">ルーティングの設定</a></h2>
+<p>[code]</p>
+<p><code>config/routes/admin/devise.rb</code>に以下のルーティングを追加します。</p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+Rails.application.routes.draw do
+  # 省略
+
+  # 以下パスに変更
+  devise_scope :admin_registration do
+    post &quot;admin/registration/finish&quot;, to: &quot;admin/registrations#finish&quot;, as: &quot;finish_admin_registration&quot;
+  end
+end
+</code></pre>
+<p>[command]</p>
+<p><code>bin/rails routes -g admin/registration/finish</code>を実行して、ルーティングが追加されていることを確認します。</p>
+<pre><code class="language-bash">bin/rails routes -g admin/registration/finish
+</code></pre>
+<p>[output]</p>
+<pre><code class="language-bash">/workspace# bin/rails routes -g admin/registration/finish
+                   Prefix Verb URI Pattern                          Controller#Action
+finish_admin_registration POST /admin/registration/finish(.:format) admin/registrations#finish
+</code></pre>
+<p>ルーティングが追加されていることを確認することができました。</p>
+<h2 id="コントローラーの作成"><a class="header" href="#コントローラーの作成">コントローラーの作成</a></h2>
+<p>[command]</p>
+<pre><code class="language-bash">touch app/controllers/admin/registrations_controller.rb
+</code></pre>
+<p>[code]</p>
+<p><code>app/controllers/admin/registrations_controller.rb</code>を以下のように編集します。</p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class Admin::RegistrationsController &lt; Devise::ConfirmationsController
+  layout &quot;admin/auth&quot;
+
+  # GET /resource/confirmation/new
+  def new
+    super
+  end
+
+  # POST /resource/confirmation
+  def create
+    registered = Admin::DatabaseAuthentication.where(email: params[:registration][:email]).exists?
+    if registered
+      flash[:error] = &quot;Given email address is already registered.&quot;
+      return render :new
+    end
+    admin_registration = Admin::Registration.find_or_initialize_by(unconfirmed_email: params[:registration][:email])
+    if admin_registration.save
+      Admin::DeviseMailer.confirmation_instructions(admin_registration).deliver_now
+      flash[:notice] = &quot;Sending an email confirmation instruction&quot;
+      redirect_to new_admin_database_authentication_session_path and return
+    else
+      respond_with(admin_registration)
+    end
+  end
+
+  # GET /resource/confirmation?confirmation_token=abcdef
+  def show
+    @admin = Admin.new
+    @admin_database_authentication = Admin::DatabaseAuthentication.new
+  end
+
+  def finish
+    admin_registration = Admin::Registration.confirm_by_token(params[:confirmation_token])
+    ActiveRecord::Base.transaction do
+      @admin = Admin.new(full_name: params[:full_name])
+      @admin_database_authentication = Admin::DatabaseAuthentication.new(
+        admin: @admin,
+        email: admin_registration&amp;.unconfirmed_email,
+        password: params[:password],
+        password_confirmation: params[:password_confirmation]
+      )
+      @admin.save!
+      @admin_database_authentication.save!
+      admin_registration.destroy!
+    end
+
+    sign_in(:admin, @admin)
+    sign_in(:database_authentication, @admin_database_authentication)
+
+    redirect_to new_admin_database_authentication_session_path
+  rescue StandardError
+    render :show
+  end
+end
+</code></pre>
+<h2 id="ビューの作成"><a class="header" href="#ビューの作成">ビューの作成</a></h2>
+<p>[command]</p>
+<pre><code class="language-bash">mkdir -p app/views/admin/registrations &amp;&amp; touch app/views/admin/registrations/new.html.erb &amp;&amp; touch app/views/admin/registrations/show.html.erb
+</code></pre>
+<p>[code]</p>
+<p><code>app/views/admin/registrations/new.html.erb</code>を以下のように編集します。</p>
+<pre><code class="language-erb">&lt;main&gt;
+  &lt;div class=&quot;&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col&quot;&gt;
+        &lt;div class=&quot;py-5 d-flex justify-content-center align-items-center&quot;&gt;
+          MyCMSの新規登録画面
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col&quot;&gt;
+        &lt;div class=&quot;py-5 d-flex justify-content-center align-items-center&quot;&gt;
+          &lt;div class=&quot;w-75 mx-3&quot;&gt;
+            &lt;h1 class=&quot;text-center fw-bold&quot;&gt;ログイン&lt;/h1&gt;
+            &lt;div class=&quot;w-100 mx-auto mt-5&quot;&gt;
+              &lt;%= form_for(resource, as: resource_name, url: admin_registration_confirmation_path) do |f| %&gt;
+                &lt;div class=&quot;mt-4&quot;&gt;
+                  &lt;label for=&quot;email&quot; class=&quot;mb-1 form-label text-small text-muted&quot;&gt;メールアドレス&lt;/label&gt;
+                  &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;email&quot; placeholder=&quot;name@example.com&quot; name=&quot;registration[email]&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;mt-4&quot;&gt;
+                  &lt;button class=&quot;btn btn-dark w-100&quot;&gt;
+                    メールアドレスで新規登録
+                  &lt;/button&gt;
+                &lt;/div&gt;
+              &lt;% end %&gt;
+              &lt;ul class=&quot;mt-4 d-flex&quot;&gt;
+                &lt;li class=&quot;me-2 text-muted&quot;&gt;
+                  &lt;a href=&quot;/terms&quot;&gt;利用規約&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;me-2 text-muted&quot;&gt;
+                  &lt;a href=&quot;/privacy&quot;&gt;プライバシーポリシー&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+<p>[output]</p>
+<p>以下にアクセスして、以下のような画面が表示されることを確認します。</p>
+<p><a href="http://localhost:3000/admin/confirmation/new">http://localhost:3000/admin/confirmation/new</a></p>
+<p><img src="./images/cms-day2-1.png" alt="img" /></p>
+<hr />
+<p>[code]</p>
+<p><code>app/views/admin/registrations/show.html.erb</code>を以下のように編集します。</p>
+<pre><code class="language-erb">&lt;main&gt;
+  &lt;div class=&quot;&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col&quot;&gt;
+        &lt;div class=&quot;py-5 d-flex justify-content-center align-items-center&quot;&gt;
+          MyCMSの新規登録画面
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col&quot;&gt;
+        &lt;div class=&quot;py-5 d-flex justify-content-center align-items-center&quot;&gt;
+          &lt;div class=&quot;w-75 mx-3&quot;&gt;
+            &lt;h1 class=&quot;text-center fw-bold&quot;&gt;管理者として登録する&lt;/h1&gt;
+            &lt;div class=&quot;w-100 mx-auto mt-5&quot;&gt;
+              &lt;%= form_tag(finish_admin_registration_path) do |f| %&gt;
+                &lt;input type=&quot;hidden&quot; name=&quot;confirmation_token&quot; value=&quot;&lt;%= params[:confirmation_token] %&gt;&quot;&gt;
+                &lt;div class=&quot;mt-4&quot;&gt;
+                  &lt;label for=&quot;full_name&quot; class=&quot;mb-1 form-label text-small text-muted&quot;&gt;名前&lt;/label&gt;
+                  &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;full_name&quot; placeholder=&quot;タナカユウキ&quot; name=&quot;full_name&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;mt-4&quot;&gt;
+                  &lt;label for=&quot;password&quot; class=&quot;mb-1 form-label text-small text-muted&quot;&gt;パスワード&lt;/label&gt;
+                  &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;password&quot; name=&quot;password&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;mt-4&quot;&gt;
+                  &lt;label for=&quot;password_confirmation&quot; class=&quot;mb-1 form-label text-small text-muted&quot;&gt;パスワード確認&lt;/label&gt;
+                  &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;password_confirmation&quot; name=&quot;password_confirmation&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;mt-4&quot;&gt;
+                  &lt;button class=&quot;btn btn-dark w-100&quot;&gt;
+                    管理者として登録する
+                  &lt;/button&gt;
+                &lt;/div&gt;
+              &lt;% end %&gt;
+              &lt;ul class=&quot;mt-4 d-flex&quot;&gt;
+                &lt;li class=&quot;me-2 text-muted&quot;&gt;
+                  &lt;a href=&quot;/terms&quot;&gt;利用規約&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;me-2 text-muted&quot;&gt;
+                  &lt;a href=&quot;/privacy&quot;&gt;プライバシーポリシー&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+<p>[output]</p>
+<p>以下にアクセスして、以下のような画面が表示されることを確認します。</p>
+<p><a href="http://localhost:3000/admin/confirmation">http://localhost:3000/admin/confirmation</a></p>
+<p><img src="./images/cms-day2-4.png" alt="img" /></p>
+<h2 id="mailerの作成"><a class="header" href="#mailerの作成">Mailerの作成</a></h2>
+<p>Railsでのメール送信には、<code>ActionMailer</code>を使います。<code>ActionMailer</code>は、メールの送信に必要なメソッドを提供します。</p>
+<p>[command]</p>
+<pre><code class="language-bash">touch app/mailers/admin/devise_mailer.rb
+</code></pre>
+<p>[code]</p>
+<p><code>app/mailers/admin/devise_mailer.rb</code>を以下のように編集します。</p>
+<pre><code class="language-ruby"># frozen_string_literal: true
+
+class Admin::DeviseMailer &lt; Admin::ApplicationMailer
+  default from: &quot;from@example.com&quot;
+  layout &quot;mailer&quot;
+
+  def confirmation_instructions(resource)
+    subject = &quot;会員登録のご案内&quot;
+    template_path = &quot;admin/mailer/devise&quot;
+    template_name = &quot;confirmation_instructions&quot;
+    @token = resource&amp;.confirmation_token
+    @email = resource&amp;.unconfirmed_email
+
+    mail(
+      to: @email,
+      subject: subject,
+      template_path: template_path,
+      template_name: template_name
+    )
+  end
+end
+</code></pre>
+<p><code>config/initilizers/devise.rb</code>に以下を追加します。</p>
+<pre><code class="language-ruby">config.mailer = 'Admin::DeviseMailer'
+</code></pre>
+<h4 id="メールのテンプレートの作成"><a class="header" href="#メールのテンプレートの作成">メールのテンプレートの作成</a></h4>
+<p>[command]</p>
+<pre><code class="language-bash">mkdir -p app/views/admin/mailer/devise &amp;&amp; touch app/views/admin/mailer/devise/confirmation_instructions.html.erb
+</code></pre>
+<p>[code]</p>
+<p><code>app/views/admin/mailer/devise/confirmation_instructions.html.erb</code>を以下のように編集します。</p>
+<pre><code class="language-erb">&lt;p&gt;Welcome &lt;%= @email %&gt;!&lt;/p&gt;
+
+&lt;p&gt;You can confirm your account email through the link below:&lt;/p&gt;
+
+&lt;p&gt;&lt;%= link_to 'Confirm my account', admin_registration_confirmation_url(confirmation_token: @token) %&gt;&lt;/p&gt;
+
+</code></pre>
+<h4 id="letter-opener-webの設定"><a class="header" href="#letter-opener-webの設定">Letter Opener Webの設定</a></h4>
+<p>Letter Opener Webを使って、メールの送信内容を確認できるようにします。</p>
+<p>[code]</p>
+<p><code>Gemfile</code>を以下のように編集します。</p>
+<pre><code class="language-ruby">gem &quot;letter_opener_web&quot;, &quot;~&gt; 2.0&quot;
+</code></pre>
+<p>[command]</p>
+<pre><code class="language-bash">bundle install
+</code></pre>
+<p>[code]</p>
+<p><code>config/routes.rb</code>を以下のように編集します。</p>
+<pre><code class="language-ruby">mount LetterOpenerWeb::Engine, at: &quot;/letter_opener&quot; if Rails.env.development? || Rails.env.staging?
+</code></pre>
+<p>[code]</p>
+<p><code>config/environments/development.rb</code>に以下を追加します。</p>
+<pre><code class="language-ruby">config.action_mailer.default_url_options = { host: &quot;localhost:3000&quot; }
+config.action_mailer.delivery_method = :letter_opener_web
+</code></pre>
+<p>サーバーを再起動して、以下にアクセスして、以下のような画面が表示されることを確認します。</p>
+<p><a href="http://localhost:3000/letter_opener">http://localhost:3000/letter_opener</a></p>
+<p><img src="./images/cms-day2-2.png" alt="img" /></p>
+<h2 id="管理者アカウント新規登録"><a class="header" href="#管理者アカウント新規登録">管理者アカウント新規登録</a></h2>
+<p>[try]</p>
+<p>以下の画面から、メールアドレスを入力して管理者アカウントの新規登録を行います。
+<code>info@mycms.com</code>を入力してみます。</p>
+<p><a href="http://localhost:3000/admin/confirmation/new">http://localhost:3000/admin/confirmation/new</a></p>
+<p>メールアドレスを入力して送信すると、Letter Opener Webの画面で以下のようなメールが表示されます。</p>
+<p><a href="http://localhost:3000/letter_opener/">http://localhost:3000/letter_opener/</a></p>
+<p><img src="./images/cms-day2-3.png" alt="img" /></p>
+<hr />
+<p>メールのリンクをクリックすると、以下のような画面が表示されます。</p>
+<p><code>app/controllers/admin/registrations_controller.rb</code>で定義した<code>show</code>アクションが呼び出されています。</p>
+<p><img src="./images/cms-day2-4.png" alt="img" /></p>
+<p>名前、パスワード、パスワード確認を入力して送信して、管理者アカウントの新規登録は完了です。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../day-2/handson.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../day-2/handson-auth-session.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../day-2/handson.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../day-2/handson-auth-session.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+        <script>
+            window.playground_line_numbers = true;
+        </script>
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js"></script>
+        <script src="../editor.js"></script>
+        <script src="../mode-rust.js"></script>
+        <script src="../theme-dawn.js"></script>
+        <script src="../theme-tomorrow_night.js"></script>
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../mermaid.min.js"></script>
+        <script src="../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>
