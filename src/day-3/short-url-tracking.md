@@ -323,6 +323,53 @@ end
 bin/rails db:migrate
 ```
 
+## CmsRedis::ShortUrlを作成
+
+```bash
+touch lib/cms_redis/short_url.rb
+```
+
+以下のように編集します。
+
+Filename: `lib/cms_redis/short_url.rb`
+
+```ruby
+# frozen_string_literal: true
+
+module CmsRedis
+  class ShortUrl
+    EXPIRES = 60 * 60 * 24
+    CACHE_KEY = "short-url"
+
+    def initialize(cache_key = "", expires = EXPIRES)
+      @cache_key = cache_key
+      @expires = expires
+      @connection = ::CmsRedis::Core::Client.new(@cache_key, @expires)
+    end
+
+    def fetch
+      @connection.fetch do
+        []
+      end
+    end
+
+    def cache?
+      @connection.cache?
+    end
+
+    def set(hash)
+      array = fetch
+      array << hash
+      @connection.set(array)
+    end
+
+    def del
+      @connection.del
+    end
+  end
+end
+```
+
 ## ShortUrlTrackingモデルを作成
 
 ShortUrlTrackingモデルを作成します。ターミナルで、以下のコマンドを実行します。
